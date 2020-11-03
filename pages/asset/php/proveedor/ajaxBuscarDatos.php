@@ -6,10 +6,10 @@
         $query = "%".$_REQUEST['query']."%";
 
         if($query != "") {
-            $result = $db->query("SELECT * FROM t_cargo WHERE c_nombrecargo LIKE '$query' OR db_salario LIKE '$query'");
+            $result = $db->query("SELECT * FROM t_proveedor WHERE c_nombre LIKE '$query' OR c_telefono LIKE '$query'");
         }
         else {
-            $result = $db->query("SELECT * FROM t_cargo");
+            $result = $db->query("SELECT * FROM t_proveedor");
         }
 
         if($result) {
@@ -19,7 +19,7 @@
                     <tr>
                         <td><?php echo $row[0]; ?></td>
                         <td><?php echo $row[1]; ?></td>
-                        <td>$<?php echo $row[2]; ?></td>
+                        <td><?php echo $row[2]; ?></td>
                         <td width="200px">
                             <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
                             <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-cargo="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
@@ -35,6 +35,7 @@
         else {
             echo -1;
         }
+
         $db->close();
     }
 ?>

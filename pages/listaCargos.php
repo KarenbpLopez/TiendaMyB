@@ -33,6 +33,26 @@
     <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
 
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+    <script type="text/javascript">
+        function abrirVentana() {
+              var window_width = 750;
+              var window_height = 480;
+              var newfeatures= 'scrollbars=no,resizable=no';
+              var window_top = (screen.height-window_height)/2;
+              var window_left = (screen.width-window_width)/2;
+              newWindow=window.open('reportes/reporteCargo.php', 'Reporte','width=' + window_width + ',height=' + window_height + ',top=' + window_top + ',left=' + window_left + ',features=' + newfeatures + '');
+}
+        function configuraLoading(screen){
+  $(document).ajaxStart(function(){
+    screen.fadeIn();
+  }).ajaxStop(function(){
+    screen.fadeOut();
+  });
+}
+
+    </script>
+
   </head>
 
  <body id="mimin" class="dashboard">
@@ -68,7 +88,7 @@
              Nuevo Cargo</button>
            </div> 
             <div style="top:20px !important;float:right;padding-left:20px;position: relative;">
-             <button  type="button" style="width: 120px;" class="form-control btn-info roundbotton"  type="button"    data-toggle="modal">
+             <button  type="button"  onclick="abrirVentana();" style="width: 120px;" class="form-control btn-info roundbotton"  type="button"    data-toggle="modal">
             <i class="fa fa-file-text-o" aria-hidden="true"></i>
              Reporte</button>
            </div>

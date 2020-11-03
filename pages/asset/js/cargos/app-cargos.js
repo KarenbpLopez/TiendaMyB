@@ -161,7 +161,6 @@ $(document).ready(function () {
         }
       }) 
     });
-
     $("#busq").keyup(function (e) { 
         $.ajax({
             type: "POST",
@@ -174,7 +173,9 @@ $(document).ready(function () {
                 $("#actualizarTabla").html(response);
             }
         });
-    });
+    });    
+
+   
 });
 
 //funciones normales
