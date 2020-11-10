@@ -19,8 +19,8 @@
                     <tr>
                         <td><?php echo $row[0]; ?></td>
                         <td><?php echo $row[1]; ?></td>
-                        <td><?php echo $row[2]; ?></td>
-                        <td><?php echo $row[3]; ?></td>
+                        <td><?php echo $row[5]; ?></td>
+                        <td><?php echo $row[6]; ?></td>
                         
                         <td width="200px">
                             <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
