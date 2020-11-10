@@ -11,7 +11,7 @@ $(document).ready(function () {
                         data: {
                             usuario: $("#formNombreUsuario").val(),
                             clave: $("#formContraUsuario").val(),
-                            nivel: 0,
+                           // nivel: 0,
                             empleado: $("#formIDEmp").val(),
                             correo: $("#formCorreoUsuario").val()
                         },

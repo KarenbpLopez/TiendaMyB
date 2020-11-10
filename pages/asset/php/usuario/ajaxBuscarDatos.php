@@ -6,7 +6,7 @@
         $query = "%".$_REQUEST['query']."%";
 
         if($query != "") {
-            $result = $db->query("SELECT * FROM t_usuario WHERE c_nombreusuario LIKE '$query' OR e_idempleado LIKE '$query'");
+            $result = $db->query("SELECT * FROM t_usuario WHERE c_nombreusuario LIKE '$query' OR c_correo LIKE '$query'");
         }
         else {
             $result = $db->query("SELECT * FROM t_usuario");

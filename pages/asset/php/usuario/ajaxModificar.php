@@ -7,15 +7,15 @@
 
         $usuario = $_REQUEST['usuario'];
         $clave = md5($_REQUEST['clave']);
-        $nivel = $_REQUEST['nivel'];
+       // $nivel = $_REQUEST['nivel'];
         $correo = $_REQUEST['correo'];
 
         //COMIENZA
         $db->autocommit(FALSE);
 
         //actualizar primero empleado
-        $result_user = $db->query("UPDATE t_usuario SET c_nombreusuario = '$usuario', c_clave = '$clave', ty_nivel = $nivel, c_correo = '$correo' WHERE e_idusuario = $id_user");
-
+        $result_user = $db->query("UPDATE t_usuario SET c_nombreusuario = '$usuario', c_clave = '$clave', c_correo = '$correo' WHERE e_idusuario = $id_user");
+                                                                                                        //, ty_nivel = $nivel
         if($result_user) {
             echo $id_emp;
 
