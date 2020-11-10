@@ -223,6 +223,19 @@ $(document).ready(function () {
             });
         }
     });
+    $("#busq").keyup(function (e) { 
+        $.ajax({
+            type: "POST",
+            url: "asset/php/empleado/ajaxBuscarDatos.php",
+            data: {
+                query: $("#busq").val()
+            },
+            success: function (response) {
+                $("#actualizarTabla").empty();
+                $("#actualizarTabla").html(response);
+            }
+        });
+    });
 });
 
 //funciones normales

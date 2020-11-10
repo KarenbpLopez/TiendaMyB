@@ -6,10 +6,10 @@
         $query = "%".$_REQUEST['query']."%";
 
         if($query != "") {
-            $result = $db->query("SELECT * FROM t_empleado WHERE c_nombre LIKE '$query' OR c_apellido LIKE '$query'");
+            $result = $db->query("SELECT * FROM t_usuario WHERE c_nombreusuario LIKE '$query' OR e_idempleado LIKE '$query'");
         }
         else {
-            $result = $db->query("SELECT * FROM t_empleado");
+            $result = $db->query("SELECT * FROM t_usuario");
         }
 
         if($result) {
@@ -21,11 +21,10 @@
                         <td><?php echo $row[1]; ?></td>
                         <td><?php echo $row[2]; ?></td>
                         <td><?php echo $row[3]; ?></td>
-                        <td><?php echo $row[4]; ?></td>
-                        <td><?php echo $row[5]; ?></td>
+                        
                         <td width="200px">
                             <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-                            <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-empleado="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
+                            <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-usuario="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                         </td>
                     </tr>
                     <?php
