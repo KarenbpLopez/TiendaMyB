@@ -9,7 +9,7 @@
                     </li>
                     <!-- end:Date -->
                     <li class="ripple redo">
-                      <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Inicio 
+                      <a  class="tree-toggle nav-header"><span class="fa-home fa"></span> Inicio 
                       </a>
                     </li>
                     <li class="ripple redo">
