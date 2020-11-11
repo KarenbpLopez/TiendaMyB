@@ -31,7 +31,7 @@
                 }
             }
             else {
-                ?><tr><td colspan="4">No se pudieron encontrar datos</td></tr><?php
+                ?><tr><td colspan="5">No se pudieron encontrar datos</td></tr><?php
             }
         }
         else {

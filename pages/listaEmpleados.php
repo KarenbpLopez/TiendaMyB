@@ -34,6 +34,26 @@
     <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
 
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+    <script type="text/javascript">
+        function abrirVentana() {
+              var window_width = 750;
+              var window_height = 480;
+              var newfeatures= 'scrollbars=no,resizable=no';
+              var window_top = (screen.height-window_height)/2;
+              var window_left = (screen.width-window_width)/2;
+              newWindow=window.open('reportes/reporteEmpleado.php', 'Reporte','width=' + window_width + ',height=' + window_height + ',top=' + window_top + ',left=' + window_left + ',features=' + newfeatures + '');
+}
+        function configuraLoading(screen){
+  $(document).ajaxStart(function(){
+    screen.fadeIn();
+  }).ajaxStop(function(){
+    screen.fadeOut();
+  });
+}
+
+    </script>
+
   </head>
 
  <body id="mimin" class="dashboard">
@@ -69,7 +89,7 @@
              Nuevo Empleado</button>
            </div> 
             <div style="top:20px !important;float:right;padding-left:20px;position: relative;">
-             <button  type="button" style="width: 120px;" class="form-control btn-info roundbotton"  type="button"    data-toggle="modal">
+             <button  type="button" onclick="abrirVentana();" style="width: 120px;" class="form-control btn-info roundbotton"  type="button"    data-toggle="modal">
             <i class="fa fa-file-text-o" aria-hidden="true"></i>
              Reporte</button>
            </div>
@@ -103,7 +123,7 @@
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel1">
-                    <div class="panel-heading"><h3>Lista De Empleados</h3></div>
+                    <div class="panel-heading"><h3>Lista de Empleados</h3></div>
                     <div class="panel-body">
                       <div class="responsive-table">
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
@@ -113,8 +133,8 @@
                               <td>Dui</td>
                               <td>Nombre</td>
                               <td>Apellido</td>
-                              <td>Direccion</td>
-                              <td>Telefono</td>
+                              <td>Dirección</td>
+                              <td>Teléfono</td>
                         </tr>
                       </thead>
                       <tbody id="actualizarTabla">
