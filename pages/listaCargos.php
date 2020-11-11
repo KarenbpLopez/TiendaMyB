@@ -204,7 +204,16 @@
                                               </div>
                                             </div>  
                                               <br>
-                                                                       
+                                              <label>Tipo</label>
+                                              <br>
+                                              <br>
+                                              <div style="padding-left:10px">
+                                                    Administrador <input class="form-control-md" type="radio" name="tipo" value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                   Cajero <input class="form-control-md" type="radio" name="tipo"  value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    Otro <input class="form-control-md" type="radio" name="tipo"  value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <div class="linea"></div>
+                                                  </div>
+                                                  <br>                     
                                                                 
                                                     
                                                      <div style="float: right;">

@@ -2,14 +2,26 @@ $(document).ready(function () {
     $("#guardar").click(function (e) { 
         e.preventDefault();
         
-        if($("#formNombreCargo").val() != "" && $("#formSalarioCargo").val() != "" && parseFloat($("#formSalarioCargo").val()) > 0) {
-                if($("#formHiddenIDCargo").val() == "") {
+        if($("#formNombreCargo").val() != "" && $("#formSalarioCargo").val() != "" && parseFloat($("#formSalarioCargo").val()) > 0){
+            var tipo = "";
+            
+            tipo = document.getElementsByName("tipo");
+            var seleccion="";
+            for(var  i = 0; i < tipo.length; i++){
+                if(tipo[i].checked == true){
+                    seleccion = tipo[i].value;
+                    break;
+                }
+            }
+            
+            if($("#formHiddenIDCargo").val() == "") {
                     $.ajax({
                         type: "POST",
                         url: "asset/php/cargo/ajaxAgregar.php",
                         data: {
                             cargo: $("#formNombreCargo").val(),
-                            salario: $("#formSalarioCargo").val()
+                            salario: $("#formSalarioCargo").val(),
+                            tipo : seleccion
                         },
                         success: function (response) {
                             
@@ -44,6 +56,7 @@ $(document).ready(function () {
                     });
                 }
                 else {
+
                     $.ajax({
                         type: "POST",
                         url: "asset/php/cargo/ajaxModificar.php",
@@ -88,6 +101,8 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".obtener-datos", function () {
+        
+
         var elemento = $(this)[0];
         resetearModal();
         $("#guardar").val("Modificar");
@@ -177,6 +192,7 @@ $(document).ready(function () {
 
    
 });
+
 
 //funciones normales
 function resetearModal() {
