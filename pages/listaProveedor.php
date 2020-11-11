@@ -130,7 +130,7 @@
                         <tr>
                           <td width="20%">N°</td>
                           <td width="45%">Nombre</td>
-                          <td width="20%">Telefono</td>
+                          <td width="20%">Teléfono</td>
                         </tr>
                       </thead>
                       <tbody id="actualizarTabla">
@@ -197,7 +197,7 @@
                                                        
                                               </div>
                                               <div class="col-md-4">
-                                                <input type="text" class="form-control roundtext2" placeholder="Telefono" id="formTelefonoProveedor" autocomplete="off">
+                                                <input type="text" class="form-control roundtext2" placeholder="Teléfono" id="formTelefonoProveedor" autocomplete="off">
                                                       
                                                      
                                                        

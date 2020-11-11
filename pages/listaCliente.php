@@ -129,11 +129,11 @@
                       <thead>
                         <tr>
                           <td>N°</td>
-                             <td>Dui</td>
+                             <td>DUI</td>
                               <td>Nombre</td>
                              <td>Apellido</td>
-                             <td>Direccion</td>
-                             <td>Telefono</td>
+                             <td>Dirección</td>
+                             <td>Teléfono</td>
                         </tr>
                       </thead>
                       <tbody id="actualizarTabla">
@@ -199,17 +199,17 @@
                                                 onkeypress="return validarTextos(event);">
                                                       
                                                      
-                                                        <input type="text" class="form-control roundtext2" placeholder="Telefono" id="formTelefonoCliente">
+                                                        <input type="text" class="form-control roundtext2" placeholder="Teléfono" id="formTelefonoCliente">
                                               </div>
                                               <div class="col-md-6">
                                                 <input type="text" class="form-control roundtext2" placeholder="Apellido" id="formApellidoCliente" autocomplete="off"
                                                 onkeypress="return validarTextos(event);">
                                                       
                                                      
-                                                        <input type="text" class="form-control roundtext2" placeholder="Dui" id="formDUICliente" autocomplete="off">
+                                                        <input type="text" class="form-control roundtext2" placeholder="DUI" id="formDUICliente" autocomplete="off">
                                               </div>
                                             </div>  
-                                               <input type="text" style="height: 120px;" class="form-control roundtext2" placeholder="Direccion" id="formDireccionCliente" autocomplete="off">
+                                               <input type="text" style="height: 120px;" class="form-control roundtext2" placeholder="Dirección" id="formDireccionCliente" autocomplete="off">
                                                <br>
                                                                        
                                                                 

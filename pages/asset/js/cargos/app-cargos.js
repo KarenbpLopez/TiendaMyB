@@ -1,26 +1,18 @@
 $(document).ready(function () {
     $("#guardar").click(function (e) { 
         e.preventDefault();
-        if($("#formNombreCargo").val() != "" && $("#formSalarioCargo").val() != "" && parseFloat($("#formSalarioCargo").val()) > 0){
+        if($("#formNombreCargo").val() != "" && $("#formSalarioCargo").val() != "" && parseFloat($("#formSalarioCargo").val()) > 0
+        && $("#rt input[name='tipo']").is(':checked')){
            
            
             var tipo = document.getElementsByName("tipo");
             var seleccion="";
-            // var s= false;
             for(var  i = 0; i < tipo.length; i++){
                 if(tipo[i].checked == true){
                     seleccion = tipo[i].value;
-                    // s = true;
                     break;
                 }
             }
-            // if(!s){
-            //     Swal.fire(
-            //         'Debe seleccionar un tipo',
-                    
-            //         'Error'
-            //     )
-            // }
             
 
             if($("#formHiddenIDCargo").val() == "") {
@@ -212,6 +204,8 @@ $(document).ready(function () {
     $("#cancelar").click(function (e) {
         habilitar();
     });
+
+    
 
 });
 

@@ -191,6 +191,7 @@
                                               <div class="col-md-8">
                                                 <input type="text" class="form-control roundtext2" placeholder="Nombre" id="formNombreCargo" autocomplete="off"
                                                 onkeypress="return validarTextos(event);">
+                                                <!-- <span class="estado" id="estado"></span> -->
                                                       
                                                      
                                                        
