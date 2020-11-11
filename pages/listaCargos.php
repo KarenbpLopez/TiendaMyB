@@ -207,10 +207,10 @@
                                               <label>Tipo</label>
                                               <br>
                                               <br>
-                                              <div style="padding-left:10px">
-                                                    Administrador <input class="form-control-md" type="radio" name="tipo" value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                   Cajero <input class="form-control-md" type="radio" name="tipo"  value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    Otro <input class="form-control-md" type="radio" name="tipo"  value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                              <div style="padding-left:10px" id="rt">
+                                                    Administrador <input class="form-control-md" id="ad" type="radio" name="tipo" value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                   Cajero <input class="form-control-md" id="ca" type="radio" name="tipo"  value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    Otro <input class="form-control-md" id="ot" type="radio" name="tipo"  value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     <div class="linea"></div>
                                                   </div>
                                                   <br>                     
@@ -218,7 +218,7 @@
                                                     
                                                      <div style="float: right;">
                                                        <input  type="button" value="Guardar" id="guardar"  name="guardar" class="btn ripple-infinite btn-round btn-success"  >
-                                                     <input  type="button"  value="Cerrar"  class="btn ripple-infinite btn-round btn-danger"   data-dismiss="modal">
+                                                     <input  type="button"  value="Cerrar"  id="cancelar" class="btn ripple-infinite btn-round btn-danger"   data-dismiss="modal">
                                                      </div>
                                                       <br>
                                                       <br>

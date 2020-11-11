@@ -7,12 +7,13 @@
 
         $cargo = $_REQUEST['cargo'];
         $salario = $_REQUEST['salario'];
+        $tipo = $_REQUEST['tipo'];
 
         //COMIENZA
         $db->autocommit(FALSE);
 
-        //actualizar primero empleado
-        $result_cargo = $db->query("UPDATE t_cargo SET c_nombrecargo = '$cargo', db_salario = '$salario' WHERE e_idcargo = $id_cargo");
+        //actualizar primero cargo
+        $result_cargo = $db->query("UPDATE t_cargo SET c_nombrecargo = '$cargo', db_salario = '$salario', e_tipo = '$tipo' WHERE e_idcargo = $id_cargo");
 
         if($result_cargo) {
             echo $id_cargo;

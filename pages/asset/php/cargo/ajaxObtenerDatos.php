@@ -12,7 +12,8 @@
             $json[] = array(
                 'id' => $row[0],
                 'cargo' => $row[1],
-                'salario' => $row[2]
+                'salario' => $row[2],
+                'tipo' => $row[3]
             );
         }
 

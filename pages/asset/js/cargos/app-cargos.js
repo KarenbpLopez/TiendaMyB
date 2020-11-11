@@ -1,19 +1,28 @@
 $(document).ready(function () {
     $("#guardar").click(function (e) { 
         e.preventDefault();
-        
         if($("#formNombreCargo").val() != "" && $("#formSalarioCargo").val() != "" && parseFloat($("#formSalarioCargo").val()) > 0){
-            var tipo = "";
-            
-            tipo = document.getElementsByName("tipo");
+           
+           
+            var tipo = document.getElementsByName("tipo");
             var seleccion="";
+            // var s= false;
             for(var  i = 0; i < tipo.length; i++){
                 if(tipo[i].checked == true){
                     seleccion = tipo[i].value;
+                    // s = true;
                     break;
                 }
             }
+            // if(!s){
+            //     Swal.fire(
+            //         'Debe seleccionar un tipo',
+                    
+            //         'Error'
+            //     )
+            // }
             
+
             if($("#formHiddenIDCargo").val() == "") {
                     $.ajax({
                         type: "POST",
@@ -21,10 +30,9 @@ $(document).ready(function () {
                         data: {
                             cargo: $("#formNombreCargo").val(),
                             salario: $("#formSalarioCargo").val(),
-                            tipo : seleccion
+                            tipo: seleccion
                         },
                         success: function (response) {
-                            
                             if(response == -1) {
                                 Swal.fire(
                                     'No se pudo agregar el registro',
@@ -56,25 +64,24 @@ $(document).ready(function () {
                     });
                 }
                 else {
-
                     $.ajax({
                         type: "POST",
                         url: "asset/php/cargo/ajaxModificar.php",
                         data: {
                             cargo: $("#formNombreCargo").val(),
                             salario: $("#formSalarioCargo").val(),
-                            id_cargo: $("#formHiddenIDCargo").val()
+                            id_cargo: $("#formHiddenIDCargo").val(),
+                            tipo: seleccion
                         },
                         success: function (response) {
                             if(response == -1) {
                                 Swal.fire(
-  'Tuvimos un error intente luego',
-  '',
-  'error'
-)
+                                    'Tuvimos un error intente luego',
+                                    '',
+                                    'error'
+                                )
                             }
                             else {
-
                                 Swal.fire(
                                 'Registro modificado con exito',
                                  '',
@@ -101,12 +108,11 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".obtener-datos", function () {
-        
-
         var elemento = $(this)[0];
         resetearModal();
+        deshabilitar();
         $("#guardar").val("Modificar");
-        
+      
         $.ajax({
             type: "POST",
             url: "asset/php/cargo/ajaxObtenerDatos.php",
@@ -122,8 +128,21 @@ $(document).ready(function () {
                         $("#formHiddenIDCargo").val(x.id);
                         $("#formNombreCargo").val(x.cargo);
                         $("#formSalarioCargo").val(x.salario);
-                    });
+
+                    switch(x.tipo) {
+                        case "1":
+                            $("#ad").prop("checked", true);
+                            break;
+                        case "2":
+                            $("#ca").prop("checked", true);
+                            break;
+                        case "3":
+                            $("#ot").prop("checked", true);
+                            break;
+                    }
+                    }); 
                 }
+
                 else {
                     Swal.fire(
   'Tuvimos un error intente luego',
@@ -190,7 +209,10 @@ $(document).ready(function () {
         });
     });    
 
-   
+    $("#cancelar").click(function (e) {
+        habilitar();
+    });
+
 });
 
 
@@ -201,6 +223,9 @@ function resetearModal() {
 
     $("#formNombreCargo").val("");
     $("#formSalarioCargo").val("");
+    $("#ad").prop("checked",false);
+    $("#ca").prop("checked",false);
+    $("#ot").prop("checked",false);
 }
 
 function validarNumeros(e) {
@@ -237,4 +262,18 @@ function validarNumeros(e) {
       if(letras.indexOf(tecla) == -1 && !tecla_especial){
            return false;
       }
+    }
+
+    function deshabilitar(e){
+        var opciones1 = document.getElementsByName("tipo");
+        for(var i=0; i<opciones1.length; i++) {
+            opciones1[i].disabled = true;
+        }
+    }
+
+    function habilitar(e){
+        var opciones1 = document.getElementsByName("tipo");
+        for(var i=0; i<opciones1.length; i++) {
+            opciones1[i].disabled = false;
+        }
     }
