@@ -1,8 +1,11 @@
 $(document).ready(function () {
     $("#guardar").click(function (e) { 
         e.preventDefault();
+        var select = $("#marca").val();
+        var cate = $("#categoria").val();
         
-        if($("#formProducto").val() != ""  && $("#formPVenta").val() != "" && parseFloat($("#formPVenta").val()) >= 0 && parseInt($("#formGanancia").val()) >=0) {
+        if($("#formProducto").val() != ""  && $("#formPVenta").val() != "" && parseFloat($("#formPVenta").val()) >= 0 && parseInt($("#formGanancia").val()) >=0
+        && select != 0 && cate !=0) {
 
                 if($("#formHiddenIDProducto").val() == "") {
                     $.ajax({
@@ -71,6 +74,7 @@ $(document).ready(function () {
                                 )
                             }
                             else {
+                                
                                 Swal.fire(
                                 'Registro modificado con exito',
                                 '',
@@ -91,12 +95,13 @@ $(document).ready(function () {
                     'error'
                 )
             }
-            else {
+            else{
                 Swal.fire(
                     'Los campos no deben estar vacios',
                     '',
                     'error'
-                    )
+                )
+               
             }
         }
     });
@@ -245,3 +250,20 @@ function validarNumeros(e) {
       return false;
     }
 }
+
+function abrirVentana() {
+    var window_width = 750;
+    var window_height = 480;
+    var newfeatures = 'scrollbars=no,resizable=no';
+    var window_top = (screen.height - window_height) / 2;
+    var window_left = (screen.width - window_width) / 2;
+    newWindow = window.open('reportes/reporteCliente.php', 'Reporte', 'width=' + window_width + ',height=' + window_height + ',top=' + window_top + ',left=' + window_left + ',features=' + newfeatures + '');
+  }
+
+  function configuraLoading(screen) {
+    $(document).ajaxStart(function() {
+      screen.fadeIn();
+    }).ajaxStop(function() {
+      screen.fadeOut();
+    });
+  }
