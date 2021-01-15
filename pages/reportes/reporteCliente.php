@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Reporte de Clientes</title>
+<title align="left">Reporte de Clientes</title>
 <style type="text/css">
 .formatocontenidotabla {
 	font-family: Courier, Courier, monospace;
@@ -46,34 +46,49 @@ function ocultar(){
 <body>
 <?php function encabezado($ordenar)
 {
- 
-  
-    ?>
+?>
 <div id="reporte">
-  <table  border="0">
-  <tr>
-	    <th align="center" class="titulotabla">TIENDA M Y B</th>
-	</tr>
-	  <tr>
-	    <th align="center" class="titulotabla">REPORTE DE CLIENTES</th><br>
-      	    </tr>
-      <tr><th align="center" class="titulotabla">Fecha generaci&oacute;n: <?php echo date("d-m-Y"); ?></th></tr>
-     <tr>
-        <th align="center" class="titulotabla">Hora generado: <?php echo date("h:i:s "); ?></th>
-     </tr>
+    <table  border="0" style="margin: 0 auto;">
+        <tr>
+	        <th align="center" class="titulotabla">TIENDA M Y B</th>
+	    </tr>
+        <tr>
+	        <th align="center" class="titulotabla"></th>
+        </tr>
+        <tr>
+	        <th align="center" class="titulotabla"></th>
+        </tr><br>
+        <tr>
+	        <th align="center" class="titulotabla">Listado de Clientes</th>
+        </tr>
+        <tr>
+            <!-- <th align="left" class="titulotabla">Fecha generaci&oacute;n: <?php echo date("d-m-Y"); ?></th> -->
+        </tr>
+        <tr>
+            <th align="left" class="titulotabla">Fecha generaci&oacute;n
+                <?php 
+                    $currentDateTime=date('m/d/Y H:i:s');
+                    $newDateTime = date('d/m/Y    h:i A', strtotime($currentDateTime));
+                    echo $newDateTime;
+                    // echo date("h:i:s "); 
+                ?>
+            </th>
+        </tr>
 	</table>
+    <br>
+    <br>
 	
 
-  <table border="1" class="formatocontenidotabla" cellspacing=0 cellpadding=0 rules="all">
-  <tr>
-	    <td width="40"  align="center"><strong>N</strong></td>
-        <td width="100"  align="center"><strong>DUI</strong></td>
-	    <td width="150"  align="center"><strong>NOMBRE</strong></td>
-        <td width="150"  align="center"><strong>APELLIDO</strong></td>
-        <td width="350" align="center"><strong>DIRECCIÓN</strong></td>
-        <td width="100"  align="center"><strong>TELÉFONO</strong></td>
-	  </tr>
-  </table>
+    <table style="margin: 0 auto;" border="1" class="formatocontenidotabla" cellspacing=5 cellpadding=0 rules="all">
+        <tr>
+            <td width="40"  align="center"><strong>N</strong></td>
+            <td width="100"  align="center"><strong>DUI</strong></td>
+            <td width="150"  align="center"><strong>Nombre</strong></td>
+            <td width="150"  align="center"><strong>Apellido</strong></td>
+            <td width="200"  align="center"><strong>Dirección</strong></td>
+            <td width="100"  align="center"><strong>Teléfono</strong></td>
+        </tr>
+    </table>
 
 </div>
 <?php }
@@ -117,15 +132,15 @@ if ($result) {
     while ($fila = $result->fetch_object()) {
         if ($contador % $numeroFilas == 0) {
             encabezado("");
-            echo "<table border='1' class='formatocontenidotabla' cellspacing='5' cellpadding='0' rules='all'>";
+            echo "<table border='1' style='margin: 0 auto;' class='formatocontenidotabla' cellspacing='5' cellpadding='0' rules='all'>";
         }
         $contador++;
         echo "<tr style='height:20px;''>";
         echo "<td width='40'   align='center'>" . $contador . "</td>";
-        echo "<td width='100'  align='center'>" . $fila->c_dui . "</td> ";
-        echo "<td width='150'  align='center'>" . $fila->c_nombre . "</td>";
-        echo "<td width='150'  align='center'>" . $fila->c_apellido . "</td>";
-        echo "<td width='350' align='center'>" .$fila->c_direccion . "</td>";
+        echo "<td width='100'  align='center'>" . $fila->c_dui . "</td>";
+        echo "<td width='150'  align='center'>" . $fila->c_nombre . "</td> ";
+        echo "<td width='150'  align='center'>" . $fila->c_apellido . "</td> ";
+        echo "<td width='200'  align='center'>" . $fila->c_direccion . "</td> ";
         echo "<td width='100'  align='center'>" . $fila->c_telefono . "</td> ";
         echo "</tr>";
 
@@ -151,6 +166,7 @@ if (!$bandera) {
     echo "<div  align='right' class='formatocontenidotabla'>" . ($numPagina + 1) . " de " . ceil($cuantasPaginas / $numeroFilas) . "</div>";
 }
 ?>
+    
 
 </body>
 
