@@ -10,7 +10,7 @@
             FROM t_usuario as u
             INNER JOIN
             t_empleado as e ON 	u.e_idempleado = e.e_idempleado
-            WHERE u.c_nombreusuario LIKE '$query' OR e.c_nombre LIKE '$query'");
+            WHERE u.c_nombreusuario LIKE '$query' OR e.c_nombre LIKE '$query' OR u.c_correo LIKE '$query'");
         }
         else {
             $result = $db->query("SELECT * FROM t_usuario");
