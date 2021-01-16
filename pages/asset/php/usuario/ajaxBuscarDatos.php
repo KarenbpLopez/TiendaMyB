@@ -6,7 +6,7 @@
         $query = "%".$_REQUEST['query']."%";
 
         if($query != "") {
-            $result = $db->query("SELECT u.e_idusuario, u.c_nombreusuario, e.c_nombre, u.c_correo
+            $result = $db->query("SELECT u.e_idusuario, u.c_nombreusuario,CONCAT(e.c_nombre, ' ', e.c_apellido) as nombre, u.c_correo
             FROM t_usuario as u
             INNER JOIN
             t_empleado as e ON 	u.e_idempleado = e.e_idempleado
