@@ -152,11 +152,12 @@
                               <td><?php echo $row[3]; ?></td>
                               <td><?php echo $row[4]; ?></td>
                               <td><?php echo $row[5]; ?></td>
-                              <td width="200px">
+                              <td width="130px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>,<?php echo $row[7]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-
+                                </td>
+                              <td width="130pc">
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>,<?php echo $row[7]; ?>" name-emp="<?php echo $row[2]." ".$row[3]; ?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
-                              </td>
+                                </td>
                             </tr>
                             <?php
                           }

@@ -13,7 +13,7 @@
         $db->autocommit(FALSE);
 
         //insertar primero empleado                                     // ty_nivel,
-        $result_user = $db->query("INSERT INTO t_usuario(c_nombreusuario, c_clave, c_preguntarespaldo, c_respuestarespaldo, e_idempleado, c_correo) VALUES ('$usuario','$clave','','',$empleado,'$correo')");
+        $result_user = $db->query("INSERT INTO t_usuario(c_nombreusuario, c_clave, e_idempleado, c_correo) VALUES ('$usuario','$clave', $empleado,'$correo')");
         $id_user = $db->insert_id;
 
         if($result_user) {

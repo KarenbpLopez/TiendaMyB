@@ -80,7 +80,16 @@ function ocultar(){
 include "conexion_db.php";
 
 
-  $resultado=$db->query("SELECT * FROM t_usuario");
+  $resultado=$db->query("SELECT
+	t_usuario.c_nombreusuario, 
+	t_empleado.c_nombre, 
+	t_usuario.c_correo
+FROM
+	t_usuario
+	INNER JOIN
+	t_empleado
+	ON 
+		t_usuario.e_idempleado = t_empleado.e_idempleado");
   if($resultado){
     while ($fil=$resultado->fetch_object()) {
     //   $anio=$fil->anio;
@@ -93,9 +102,27 @@ $numeroFilas = 40; //Cuantas filas por pagina
 $bandera     = false;
 
 if (true) {
-    $sql = "SELECT * FROM t_usuario";
+    $sql = "SELECT
+    t_usuario.c_nombreusuario, 
+    t_empleado.c_nombre, 
+    t_usuario.c_correo
+  FROM
+    t_usuario
+    INNER JOIN
+    t_empleado
+    ON 
+      t_usuario.e_idempleado = t_empleado.e_idempleado";
 } else {
-    $sql = "SELECT * FROM t_usuario";
+    $sql = "SELECT
+    t_usuario.c_nombreusuario, 
+    t_empleado.c_nombre, 
+    t_usuario.c_correo
+  FROM
+    t_usuario
+    INNER JOIN
+    t_empleado
+    ON 
+      t_usuario.e_idempleado = t_empleado.e_idempleado";
 }
 
 $result = $db->query($sql);
@@ -122,7 +149,7 @@ if ($result) {
         echo "<tr style='height:20px;''>";
         echo "<td width='40'   align='center'>" . $contador . "</td>";
         echo "<td width='200'  align='center'>" . $fila->c_nombreusuario . "</td>";
-        echo "<td width='100'  align='center'>" . $fila->e_idempleado . "</td>";
+        echo "<td width='100'  align='center'>" . $fila->c_nombre . "</td>";
         echo "<td width='100'  align='center'>" . $fila->c_correo . "</td>";
         
         echo "</tr>";
