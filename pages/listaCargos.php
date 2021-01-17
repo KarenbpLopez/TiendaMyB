@@ -149,7 +149,7 @@
                                     aria-hidden="true"></i> Modificar
                                 </button>
                             </td>
-                            <td width="120px">
+                            <td width="130px">
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" 
                                   tag="<?php echo $row[0]; ?>" nombre-cargo="<?php echo $row[1];?>"><i class="fa fa-trash" 
                                     aria-hidden="true"></i> Eliminar
