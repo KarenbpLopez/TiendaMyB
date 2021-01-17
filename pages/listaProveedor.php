@@ -1,3 +1,5 @@
+<?php include "asset/php/sesion/validar_sesion.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +25,7 @@
   <!-- end: Css -->
   <!-- end: Css -->
 
-  <link rel="icon" type="image/png" href="images/icons/favicon3.ico"/>
+  <link rel="shortcut icon" href="asset/img/logomi.png">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -122,15 +124,15 @@
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel1">
-                    <div class="panel-heading"><h3>Lista de Proveedores</h3></div>
+                    <div class="panel-heading"><h3>Lista De Proveedores</h3></div>
                     <div class="panel-body">
                       <div class="responsive-table">
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <td width="">N°</td>
-                          <td width="">Nombre</td>
-                          <td width="">Teléfono</td>
+                          <td width="20%">N°</td>
+                          <td width="45%">Nombre</td>
+                          <td width="20%">Teléfono</td>
                         </tr>
                       </thead>
                       <tbody id="actualizarTabla">
@@ -143,10 +145,8 @@
                               <td><?php echo $row[0]; ?></td>
                               <td><?php echo $row[1]; ?></td>
                               <td><?php echo $row[2]; ?></td>
-                              <td width="130px">
+                              <td width="200px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-                              </td>
-                              <td width="120px">  
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-prov="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                               </td>
                             </tr>
@@ -280,6 +280,8 @@
      <script src="asset/js/main.js"></script>
 
      <script src="asset/js/proveedores/app-proveedor.js"></script>
+
+     <?php include "asset/php/sesion/script_logout.php"; ?>
   <!-- end: Javascript -->
   </body>
 </html>

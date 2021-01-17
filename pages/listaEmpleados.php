@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -444,6 +446,8 @@
 
      <!--Custom javascript-->
     <script src="asset/js/empleados/app-emp.js"></script>
+
+    <?php include "asset/php/sesion/script_logout.php"; ?>
   <!-- end: Javascript -->
   </body>
 

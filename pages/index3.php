@@ -1,3 +1,5 @@
+<?php include "asset/php/sesion/validar_sesion.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +22,7 @@
   <link href="asset/css/style.css" rel="stylesheet">
   <!-- end: Css -->
 
-  <!-- <link rel="shortcut icon" href="asset/img/logomi.png"> -->
-  <link rel="icon" type="image/png" href="images/icons/favicon3.ico"/>
+  <link rel="shortcut icon" href="asset/img/logomi.png">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -57,8 +58,8 @@
                      <li role="separator" class="divider"></li>
                      <li class="more">
                       <ul>
-                        <li><a href=""><span class="fa fa-cogs"></span> Configuración</a></li>
-                        <li><a href="login.php"><span class="fa fa-power-off "></span> Salir</a></li>
+                        <li><a href="#"><span class="fa fa-cogs"></span> Configuración</a></li>
+                        <li><a href="#" id="btn-cerrar-session"><span class="fa fa-power-off "></span> Salir</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -83,7 +84,7 @@
                       <p class="animated fadeInRight"><p class="f1" id="dd" align="center"></p></p>
                     </li>
                     <!-- end:Date -->
-                    <li class="ripple redo">
+                    <li class="ripple redo" onclick="location='index3.php'">
                       <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Inicio 
                       </a>
                     </li>
@@ -100,7 +101,12 @@
                         <li><a href="listaCargos.php"><span class="fa-check fa"></span>Cargo</a></li>
                       </ul>
                     </li>
-                    <li class="ripple redo">
+                    <li class="ripple redo" onclick="location='listacompra.php'">
+                      <a class="tree-toggle nav-header" href="#">
+                        <span class="fa-shopping-basket fa"></span> Compras
+                      </a>
+                    </li>
+                    <li class="ripple redo" onclick="location='cajero.php'">
                       <a class="tree-toggle nav-header" href="#">
                         <span class="fa-shopping-cart fa"></span> Venta
                       </a>
@@ -149,6 +155,8 @@
 
     <!-- custom -->
      <script src="asset/js/main.js"></script>
+
+     <?php include "asset/php/sesion/script_logout.php"; ?>
   <!-- end: Javascript -->
   </body>
 </html>

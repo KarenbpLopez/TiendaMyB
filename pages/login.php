@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION) && isset($_SESSION["id_emp"]) && $_SESSION["id_emp"] != "") {
+        header("Location: index3.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +11,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon3.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Carter+One&family=Paytone+One&family=Righteous&display=swap" rel="stylesheet">

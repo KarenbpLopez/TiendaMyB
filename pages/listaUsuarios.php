@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,12 +147,11 @@
                               <td><?php echo $row[1]; ?></td>
                               <td><?php echo $row[2]; ?></td>
                               <td><?php echo $row[3]; ?></td>
-                              <td width="130px">
+                              <td width="200px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-                                </td>
-                                <td width="130px">
+
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" name-emp="<?php echo $row[2]; ?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
-                                </td>
+                              </td>
                             </tr>
                             <?php
                           }
@@ -301,6 +302,8 @@
      <script src="asset/js/main.js"></script>
 
      <script src="asset/js/usuarios/app-user.js"></script>
+
+     <?php include "asset/php/sesion/script_logout.php"; ?>
   <!-- end: Javascript -->
   </body>
 </html>
