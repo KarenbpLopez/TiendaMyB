@@ -124,7 +124,7 @@
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel1">
-                    <div class="panel-heading"><h3>Lista De Proveedores</h3></div>
+                    <div class="panel-heading"><h3>Lista de Proveedores</h3></div>
                     <div class="panel-body">
                       <div class="responsive-table">
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
@@ -145,10 +145,12 @@
                               <td><?php echo $row[0]; ?></td>
                               <td><?php echo $row[1]; ?></td>
                               <td><?php echo $row[2]; ?></td>
-                              <td width="200px">
+                              <td width="130px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
+                                </td>
+                              <td width="120px">
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-prov="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
-                              </td>
+                                </td>
                             </tr>
                             <?php
                           }
@@ -174,7 +176,7 @@
                                         <span aria-hidden="true" style="font-size: 35px;">×</span>
                                         <span class="sr-only">Cerrar</span>
                                     </button>
-                                  <h3  style="padding-left:150px" id="myModalLabel">Registro De Proveedor</h3>
+                                  <h3  style="padding-left:150px" id="myModalLabel">Registro de Proveedor</h3>
                                       
                                     
                                      

@@ -178,7 +178,7 @@
                                         <span aria-hidden="true" style="font-size: 35px;">×</span>
                                         <span class="sr-only">Cerrar</span>
                                     </button>
-                                  <h3  style="padding-left:150px" id="myModalLabel">Registro De Usuario</h3>
+                                  <h3  style="padding-left:150px" id="myModalLabel">Registro de Usuario</h3>
                                       
                                    
                                      
@@ -213,8 +213,8 @@
                                                 </datalist>
                                               </div>
                                             </div>
-                                             <input type="text" class="form-control roundtext2" placeholder="Nombre De Usuario" id="formNombreUsuario">
-                                              <input type="text" class="form-control roundtext2" placeholder="Correo Electronico" id="formCorreoUsuario">
+                                             <input type="text" class="form-control roundtext2" placeholder="Nombre de Usuario" id="formNombreUsuario">
+                                              <input type="text" class="form-control roundtext2" placeholder="Correo Electrónico" id="formCorreoUsuario">
                                               <div class="row">
                                               <div class="col-md-6">
                                                

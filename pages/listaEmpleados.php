@@ -183,7 +183,7 @@
                                         <span aria-hidden="true" style="font-size: 35px;">×</span>
                                         <span class="sr-only">Cerrar</span>
                                     </button>
-                                  <h3  style="padding-left:150px" id="myModalLabel">Registro De Empleado</h3>
+                                  <h3  style="padding-left:150px" id="myModalLabel">Registro de Empleado</h3>
                                       
                                    
                                      
@@ -198,7 +198,7 @@
                                     <form id="registroCliente">
                                       <input type="hidden" id="formHiddenIDEmp">
                                       <input type="hidden" id="formHiddenIDHorario">
-                                                   <h4  style="padding-left:10px" id="myModalLabel">Datos De Personales</h4>            
+                                                   <h4  style="padding-left:10px" id="myModalLabel">Datos de Personales</h4>            
 
                                             <div class="row">
                                               <div class="col-md-6">
@@ -206,7 +206,7 @@
                                                 onkeypress="return validarTextos(event);">
                                                       
                                                      
-                                                        <input type="text" class="form-control roundtext2" placeholder="Telefono" name="formTelefonoEmp" 
+                                                        <input type="text" class="form-control roundtext2" placeholder="Teléfono" name="formTelefonoEmp" 
                                                         id="formTelefonoEmp" >
                                               </div>
                                               <div class="col-md-6">
@@ -214,10 +214,10 @@
                                                 onkeypress="return validarTextos(event);">
                                                       
                                                      
-                                                        <input type="text" class="form-control roundtext2" placeholder="Dui" id="formDUIEmp">
+                                                        <input type="text" class="form-control roundtext2" placeholder="DUI" id="formDUIEmp">
                                               </div>
                                             </div>  
-                                              <input type="text" style="height: 120px;" class="form-control roundtext2" placeholder="Direccion" id="formDireccionEmp">
+                                              <input type="text" style="height: 120px;" class="form-control roundtext2" placeholder="Dirección" id="formDireccionEmp">
 
                                               <select id="cargo" style="color: #918c8c" class="form-control roundtext2">
                                                 <option value="">Elegir Cargo</option>
@@ -232,7 +232,7 @@
                                                   $db->close();
                                                 ?>
                                               </select>
-                                               <h4  style="padding-left:10px" id="myModalLabel">Datos De Horario</h4>
+                                               <h4  style="padding-left:10px" id="myModalLabel">Datos de Horario</h4>
                                                <div class="row">
                                               <div class="col-md-6">
                                                <input type="time" name="" style="height: 35px !important;" class="form-control roundtext2" placeholder="Hora Inicio" id="formHoraInicioEmp">
