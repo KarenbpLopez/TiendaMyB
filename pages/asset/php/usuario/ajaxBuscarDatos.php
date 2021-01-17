@@ -6,11 +6,7 @@
         $query = "%".$_REQUEST['query']."%";
 
         if($query != "") {
-            $result = $db->query("SELECT u.e_idusuario, u.c_nombreusuario,CONCAT(e.c_nombre, ' ', e.c_apellido) as nombre, u.c_correo
-            FROM t_usuario as u
-            INNER JOIN
-            t_empleado as e ON 	u.e_idempleado = e.e_idempleado
-            WHERE u.c_nombreusuario LIKE '$query' OR e.c_nombre LIKE '$query' OR u.c_correo LIKE '$query'");
+            $result = $db->query("SELECT * FROM t_usuario WHERE c_nombreusuario LIKE '$query' OR c_correo LIKE '$query'");
         }
         else {
             $result = $db->query("SELECT * FROM t_usuario");
@@ -23,15 +19,13 @@
                     <tr>
                         <td><?php echo $row[0]; ?></td>
                         <td><?php echo $row[1]; ?></td>
-                        <td><?php echo $row[2]; ?></td>
-                        <td><?php echo $row[3]; ?></td>
+                        <td><?php echo $row[5]; ?></td>
+                        <td><?php echo $row[6]; ?></td>
                         
-                        <td width="130px">
+                        <td width="200px">
                             <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-                            </td>
-                        <td width="130px">
                             <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-usuario="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
-                            </td>
+                        </td>
                     </tr>
                     <?php
                 }

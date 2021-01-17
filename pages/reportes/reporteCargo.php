@@ -59,13 +59,7 @@ function ocultar(){
       	    </tr>
       <tr><th align="center" class="titulotabla">Fecha generaci&oacute;n: <?php echo date("d-m-Y"); ?></th></tr>
      <tr>
-        <th align="left" class="titulotabla">Fecha generaci&oacute;n
-          <?php 
-            $currentDateTime=date('m/d/Y H:i:s');
-            $newDateTime = date('d/m/Y    h:i A', strtotime($currentDateTime));
-            echo $newDateTime;
-          ?>
-        </th>
+        <th align="center" class="titulotabla">Hora generado: <?php echo date("h:i:s "); ?></th>
      </tr>
 	</table>
 	

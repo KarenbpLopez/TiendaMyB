@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Reporte de Proveedores</title>
+<title>Reporte de Compras</title>
 <style type="text/css">
 .formatocontenidotabla {
 	font-family: Courier, Courier, monospace;
@@ -34,9 +34,9 @@
 }
 </style>
 <script type="text/javascript">
-function ocultar(){
-	document.formulario.boton.style.visibility="hidden";
-	print();
+function ocultar() {
+    document.formulario.boton.style.visibility="hidden";
+	window.print();
 	document.formulario.boton.style.visibility="visible";
 }
  </script>
@@ -55,7 +55,7 @@ function ocultar(){
 	    <th align="center" class="titulotabla">TIENDA M Y B</th>
 	</tr>
 	  <tr>
-	    <th align="center" class="titulotabla">REPORTE DE PROVEEDORES</th><br>
+	    <th align="center" class="titulotabla">REPORTE DE CARGOS</th><br>
       	    </tr>
       <tr><th align="center" class="titulotabla">Fecha generaci&oacute;n: <?php echo date("d-m-Y"); ?></th></tr>
      <tr>
@@ -67,8 +67,9 @@ function ocultar(){
   <table border="1" class="formatocontenidotabla" cellspacing=0 cellpadding=0 rules="all">
   <tr>
 	    <td width="40"  align="center"><strong>N</strong></td>
-	    <td width="200"  align="center"><strong>NOMBRE</strong></td>
-        <td width="100"  align="center"><strong>TELÉFONO</strong></td>
+	    <td width="200"  align="center"><strong>FECHA COMPRA</strong></td>
+	    <td width="100"  align="center"><strong>PROVEEDOR</strong></td>
+        <td width="100"  align="center"><strong>VALOR DE COMPRA</strong></td>
 	  </tr>
   </table>
 
@@ -77,24 +78,12 @@ function ocultar(){
 
 include "conexion_db.php";
 
-
-  $resultado=$db->query("SELECT * FROM t_proveedor");
-  if($resultado){
-    while ($fil=$resultado->fetch_object()) {
-    //   $anio=$fil->anio;
-    //   $idperiodo=$fil->idperiodo;
-    }
-  }
 $contador    = 0;
 $numPagina   = 0;
 $numeroFilas = 40; //Cuantas filas por pagina
 $bandera     = false;
 
-if (true) {
-    $sql = "SELECT * FROM t_proveedor";
-} else {
-    $sql = "SELECT * FROM t_proveedor";
-}
+$sql = "SELECT c.e_idcompra,c.e_fecha,p.c_nombre,c.e_total FROM t_compra as c INNER JOIN t_proveedor as p ON c.e_idproveedor = p.e_idproveedor";
 
 $result = $db->query($sql);
 if ($result) {
@@ -105,7 +94,7 @@ if ($result) {
  ?>
  <form id="formulario" name="formulario" method="post" action="">
   <div align="left">
-    <input type="button" name="boton" id="boton" style="top: -10px" class="btn ripple-infinite btn-round btn-info" value="Imprimir" onclick="ocultar()" />
+    <input type="button" name="boton" id="boton" style="top: -10px" class="btn ripple-infinite btn-round btn-info" value="Imprimir" onclick="ocultar();" />
   </div>
 </form>
 
@@ -119,8 +108,9 @@ if ($result) {
         $contador++;
         echo "<tr style='height:20px;''>";
         echo "<td width='40'   align='center'>" . $contador . "</td>";
-        echo "<td width='200'  align='center'>" . $fila->c_nombre . "</td>";
-        echo "<td width='100'  align='center'>" . $fila->c_telefono . "</td> ";
+        echo "<td width='200'  align='center'>" . $fila->e_fecha . "</td>";
+        echo "<td width='100'  align='center'>" . $fila->c_nombre . "</td>";
+        echo "<td width='100'  align='center'>$" . $fila->e_total . "</td>";
         echo "</tr>";
 
         $bandera = false;
@@ -149,3 +139,5 @@ if (!$bandera) {
 </body>
 
 </html>
+
+

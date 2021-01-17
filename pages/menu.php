@@ -8,7 +8,7 @@
                       <p class="animated fadeInRight"><p class="f1" id="dd" align="center"></p></p>
                     </li>
                     <!-- end:Date -->
-                    <li class="ripple redo">
+                    <li class="ripple redo" onclick="location='index3.php'">
                       <a  class="tree-toggle nav-header"><span class="fa-home fa"></span> Inicio 
                       </a>
                     </li>
@@ -25,7 +25,12 @@
                         <li><a href="listaCargos.php">Cargo</a></li>
                       </ul>
                     </li>
-                    <li class="ripple redo">
+                    <li class="ripple redo" onclick="location='listacompra.php'">
+                      <a class="tree-toggle nav-header" href="#">
+                        <span class="fa-shopping-basket fa"></span> Compras
+                      </a>
+                    </li>
+                    <li class="ripple redo" onclick="location='cajero.php'">
                       <a class="tree-toggle nav-header" href="#">
                         <span class="fa-shopping-cart fa"></span> Venta
                       </a>

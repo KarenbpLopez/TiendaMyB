@@ -24,8 +24,8 @@
                      <li role="separator" class="divider"></li>
                      <li class="more">
                       <ul>
-                        <li><a href=""><span class="fa fa-cogs"></span> Configuración</a></li>
-                        <li><a href="login.php"><span class="fa fa-power-off "></span> Salir</a></li>
+                        <li><a href="#"><span class="fa fa-cogs"></span> Configuración</a></li>
+                        <li><a href="#" id="btn-cerrar-session"><span class="fa fa-power-off "></span> Salir</a></li>
                       </ul>
                     </li>
                   </ul>

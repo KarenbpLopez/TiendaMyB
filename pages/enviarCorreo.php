@@ -91,7 +91,7 @@
             success: function (response) {
               if(response != -1 && response != -2) {
                 alert("Correo enviado");
-                $(location).attr("href", "login.php");
+                $(location).attr("href", "index.php");
               }
               else {
                 if(response == -2) {

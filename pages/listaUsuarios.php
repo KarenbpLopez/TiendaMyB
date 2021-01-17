@@ -1,4 +1,4 @@
-
+<?php include "asset/php/sesion/validar_sesion.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">

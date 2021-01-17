@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     error_reporting(0);
     include "../../../conexion_db.php";
 
@@ -11,6 +13,9 @@
         $id = "";
         while($row = mysqli_fetch_array($result)) {
             $id = $row[0];
+
+            $_SESSION["id_emp"] = $row[3];
+            $_SESSION["id_user"] = $row[0];
         }
 
         if($id != "") {

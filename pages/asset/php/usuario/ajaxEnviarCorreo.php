@@ -29,6 +29,9 @@
         
         if($id != "") {
             //hacer el resto
+
+            $db->autocommit(FALSE);
+
             $passtmp = md5(obtenerCodigo());
             $result = $db->query("UPDATE t_usuario SET c_passwordtmp = '$passtmp' WHERE c_correo = '$correo'");
 
@@ -235,6 +238,8 @@
                                 $db->commit();
                                 echo 0;
                             }
+
+                            $db->autocommit(TRUE);
             }
             else {
                 //aqui es el error

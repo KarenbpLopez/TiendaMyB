@@ -1,3 +1,5 @@
+<?php include "asset/php/sesion/validar_sesion.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -367,6 +369,8 @@
 
     <!-- custom -->
      <script src="asset/js/main.js"></script>
+
+     <?php include "asset/php/sesion/script_logout.php"; ?>
   <!-- end: Javascript -->
   </body>
 </html>
