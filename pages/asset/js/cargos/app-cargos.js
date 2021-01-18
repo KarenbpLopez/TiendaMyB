@@ -16,6 +16,7 @@ $(document).ready(function () {
             
 
             if($("#formHiddenIDCargo").val() == "") {
+                if($("#verificar_producto").attr("tag") == "0") {
                     $.ajax({
                         type: "POST",
                         url: "asset/php/cargo/ajaxAgregar.php",
@@ -37,8 +38,11 @@ $(document).ready(function () {
                                                 <td>${response}</td>
                                                 <td>${$("#formNombreCargo").val()}</td>
                                                 <td>$ ${$("#formSalarioCargo").val()}</td>
-                                                <td width="200px">
+                                                
+                                                <td width="130px">
                                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="${response}"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
+                                                </td>
+                                                <td width="120px">
                                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="${response}" nombre-cargo="${$("#formNombreCargo").val()}"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                                                 </td>
                                             </tr>`;
@@ -56,6 +60,10 @@ $(document).ready(function () {
                     });
                 }
                 else {
+                    alert("Verifique que el cargo no este registrado");
+                }
+            }
+            else {
                     $.ajax({
                         type: "POST",
                         url: "asset/php/cargo/ajaxModificar.php",

@@ -106,7 +106,7 @@
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel1">
-                    <div class="panel-heading"><h3>Lista De Compras</h3>
+                    <div class="panel-heading"><h3>Lista de Compras</h3>
                      
 
                     </div>
@@ -116,9 +116,9 @@
                       <thead>
                         <tr>
                            <td>N°</td>
-                           <td>Fecha De Compra</td>
+                           <td>Fecha de Compra</td>
                            <td>Proveedor</td>
-                           <td>Valor De Compra</td>
+                           <td>Valor de Compra</td>
                         </tr>
                       </thead>
                       <tbody>

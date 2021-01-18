@@ -119,7 +119,7 @@
                       </ul>
                     </li>
                     
-                    <li class="ripple redo">
+                    <li class="ripple redo" onclick="location='ayuda.php'">
                       <a class="tree-toggle nav-header" href="#">
                         <span class="fa-info fa"></span> Ayuda
                       </a>
