@@ -111,16 +111,36 @@
                     
                     <li class="ripple redo">
                       <a class="tree-toggle nav-header">
-                        <span class="fa-navicon fa"></span> Modulos
+                        <span class="fa-navicon fa"></span> Módulos
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
+        <tr>
+            <td width="130px">
             <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
              <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalNuevo" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
-             Modulo de Listados</button>
-           </div> 
-                       
+             Módulo de Listados</button>
+           </div>
+           </td>
+        </tr>
+
+        <tr width="130px">
+           <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
+             <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalCompras" data-toggle="modal" onclick="resetearModal();">
+            <i class="fa fa-user-plus" aria-hidden="true" ></i>
+             Módulo de Compras</button>
+           </div>
+           </tr>
+
+           <tr width="130px">
+           <div style="top:10px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
+             <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalVentas" data-toggle="modal" onclick="resetearModal();">
+            <i class="fa fa-user-plus" aria-hidden="true" ></i>
+             Módulo de Ventas</button>
+           </div>
+           </tr>
+                                
                       </ul>
                     </li>
                    
@@ -143,6 +163,24 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modalCompras" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width: 95%">
+    <div class="modal-content">
+    <div class="modal-body"><img src="images/compras.jpg" width="100%" class="img-fluid" alt="Responsive image" />   </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalVentas" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width: 95%">
+    <div class="modal-content">
+    <div class="modal-body"><img src="images/ventas.jpg" width="100%" class="img-fluid" alt="Responsive image" />   </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
