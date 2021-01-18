@@ -37,24 +37,6 @@
 
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 
-    <script type="text/javascript">
-        function abrirVentana() {
-              var window_width = 750;
-              var window_height = 480;
-              var newfeatures= 'scrollbars=no,resizable=no';
-              var window_top = (screen.height-window_height)/2;
-              var window_left = (screen.width-window_width)/2;
-              newWindow=window.open('reportes/reporteEmpleado.php', 'Reporte','width=' + window_width + ',height=' + window_height + ',top=' + window_top + ',left=' + window_left + ',features=' + newfeatures + '');
-}
-        function configuraLoading(screen){
-  $(document).ajaxStart(function(){
-    screen.fadeIn();
-  }).ajaxStop(function(){
-    screen.fadeOut();
-  });
-}
-
-    </script>
 
   </head>
 
@@ -115,31 +97,33 @@
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
-        <tr>
-            <td width="130px">
-            <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
+       
+            
+            <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">  
              <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalNuevo" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
-             Módulo de Listados</button>
+             Módulo de Listados</button> 
            </div>
-           </td>
-        </tr>
+          
+    
 
-        <tr width="130px">
+        
+
+       
            <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
              <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalCompras" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
              Módulo de Compras</button>
            </div>
-           </tr>
+          
 
-           <tr width="130px">
+          
            <div style="top:10px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
-             <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalVentas" data-toggle="modal" onclick="resetearModal();">
+             <button  style="width: 150px  ; height: 50px" type="button" class="form-control btn-success roundbotton" data-target="#modalVentas" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
-             Módulo de Ventas</button>
+            Módulo de Ventas</button>
            </div>
-           </tr>
+         
                                 
                       </ul>
                     </li>
