@@ -115,6 +115,12 @@
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
              Módulo de Compras</button>
            </div>
+
+           <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
+             <button  style="width: 150px; height: 50px" type="button" class="form-control btn-success roundbotton" data-target="#modalNCompras" data-toggle="modal" onclick="resetearModal();">
+            <i class="fa fa-user-plus" aria-hidden="true" ></i>
+             Nueva Compra</button>
+           </div>
           
 
           
@@ -152,6 +158,14 @@
   <div class="modal-dialog modal-lg" style="width: 95%">
     <div class="modal-content">
     <div class="modal-body"><img src="images/compras.jpg" width="100%" class="img-fluid" alt="Responsive image" />   </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalNCompras" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width: 95%">
+    <div class="modal-content">
+    <div class="modal-body"><img src="images/nuevaCompra.jpg" width="100%" class="img-fluid" alt="Responsive image" />   </div>
     </div>
   </div>
 </div>
