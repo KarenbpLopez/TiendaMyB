@@ -32,8 +32,10 @@ $(document).ready(function () {
                                                 <td>${$("#formApellidoCliente").val()}</td>
                                                 <td>${$("#formDireccionCliente").val()}</td>
                                                 <td>${$("#formTelefonoCliente").val()}</td>
-                                                <td width="200px">
+                                                <td width="130px">
                                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="${response}"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
+                                                </td>
+                                                <td width="120px">
                                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="${response}" nombre-cliente="${$("#formNombreCliente").val()} ${$("#formApellidoCliente").val()}"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                                                 </td>
                                             </tr>`;

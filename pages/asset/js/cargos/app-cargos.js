@@ -2,8 +2,7 @@ $(document).ready(function () {
     $("#guardar").click(function (e) { 
         e.preventDefault();
         if($("#formNombreCargo").val() != "" && $("#formSalarioCargo").val() != "" && parseFloat($("#formSalarioCargo").val()) > 0
-        && $("#rt input[name='tipo']").is(':checked') 
-        && $("#verificar_producto").attr("tag") != "-1"){
+        && $("#rt input[name='tipo']").is(':checked')){
            
            
             var tipo = document.getElementsByName("tipo");
@@ -17,6 +16,7 @@ $(document).ready(function () {
             
 
             if($("#formHiddenIDCargo").val() == "") {
+                if($("#verificar_producto").attr("tag") == "0") {
                     $.ajax({
                         type: "POST",
                         url: "asset/php/cargo/ajaxAgregar.php",
@@ -38,6 +38,7 @@ $(document).ready(function () {
                                                 <td>${response}</td>
                                                 <td>${$("#formNombreCargo").val()}</td>
                                                 <td>$ ${$("#formSalarioCargo").val()}</td>
+                                                
                                                 <td width="130px">
                                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="${response}"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
                                                 </td>
@@ -59,6 +60,10 @@ $(document).ready(function () {
                     });
                 }
                 else {
+                    alert("Verifique que el cargo no este registrado");
+                }
+            }
+            else {
                     $.ajax({
                         type: "POST",
                         url: "asset/php/cargo/ajaxModificar.php",
@@ -89,17 +94,16 @@ $(document).ready(function () {
                 }
         }
         else {
-            if($("#verificar_producto").attr("tag") == "-1") {
-                alert("Cargo no disponible");
+            if(parseFloat($("#formSalarioCargo").val()) <= 0) {
+                alert("El salario no puede ser negativo");
             }
             else {
                 Swal.fire(
-                    'Los campos no deben estar vacios',
-                    '',
-                    'error'
-                    ) 
-                
-            } 
+  'Los campos no deben estar vacios',
+  '',
+  'error'
+)
+            }
         }
     });
 
@@ -209,8 +213,7 @@ $(document).ready(function () {
         habilitar();
     });
 
-     //Para verificar si existe
-     
+    
 
 });
 

@@ -99,7 +99,7 @@
                       <ul class="nav nav-list tree">
        
             
-            <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">  
+            <div style="top:10px !important;float:right;padding-right: 10px; position: relative;">  
              <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalNuevo" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
              Módulo de Listados</button> 
@@ -110,13 +110,13 @@
         
 
        
-           <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
+           <div style="top:10px !important;float:right;padding-right: 10px; position: relative;">
              <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalCompras" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
              Módulo de Compras</button>
            </div>
 
-           <div style="top:20px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
+           <div style="top:10px !important;float:right;padding-right: 10px; position: relative;">
              <button  style="width: 150px; height: 50px" type="button" class="form-control btn-success roundbotton" data-target="#modalNCompras" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
              Nueva Compra</button>
@@ -124,7 +124,7 @@
           
 
           
-           <div style="top:10px !important;float:right;padding-right: 10px;padding-right: 1400px; position: relative;">
+           <div style="top:10px !important;float:right;padding-right: 10px; position: relative;">
              <button  style="width: 150px  ; height: 50px" type="button" class="form-control btn-success roundbotton" data-target="#modalVentas" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
             Módulo de Ventas</button>

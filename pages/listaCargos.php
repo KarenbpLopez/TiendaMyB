@@ -318,7 +318,6 @@
                 alert("Cargo no disponible");
               }
               else {
-                let valores = response.split(",");
                 $("#formNombreCargo").css("border-radius", "5px");
                 $("#formNombreCargo").css("border-color", "#27C24C");
                 
