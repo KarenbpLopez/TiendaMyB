@@ -84,7 +84,7 @@ $(document).ready(function () {
         else {
             if($("#formContraUsuario").val().replace(/ /g,"").length <= 6 || $("#formReContraUsuario").val().replace(/ /g,"").length <= 6) {
                 Swal.fire(
-  'clave menor a 6 caracteres',
+  'clave menor a 7 caracteres',
   '',
   'error'
 )

@@ -23,6 +23,7 @@
                         <li><a href="listaProveedor.php">Proveedor</a></li>
                         <li><a href="listaProductos.php">Producto</a></li>
                         <li><a href="listaCargos.php">Cargo</a></li>
+                        <li><a href="listaVentas.php">Venta</a></li>
                       </ul>
                     </li>
                     <li class="ripple redo" onclick="location='listacompra.php'">
