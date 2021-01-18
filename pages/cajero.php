@@ -25,7 +25,7 @@
   <!-- end: Css -->
 	<!-- end: Css -->
 
-	<link rel="icon" type="image/png" href="images/icons/favicon3.png"/>
+	<link rel="shortcut icon" href="asset/img/logomi.png">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,6 +35,11 @@
     <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
 
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+    <!--Scripts y CSS | SWEET ALERT-->
+    <script src="sweetalert/sweetalert2.min.js"></script>
+	  <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css" />
+
   </head>
 
  <body id="mimin" class="dashboard">
@@ -103,10 +108,10 @@
                                <span class="fa fa-plus"></span> 
                               </button>
                         <label style="margin-top: 15px; margin-left: 50px;" >Cliente</label> 
-                        <input style="width: 30%;display: inline" type="text" class="form-control roundtext2" id="cliente_registro" name="cliente_registro" list="lista_clientes" tag=""/ >
+                        <input style="width: 30%;display: inline" type="text" class="form-control roundtext2" id="cliente_registro" name="cliente_registro" list="lista_clientes" tag="" />
                         <datalist id="lista_clientes">
                         <?php
-                          $result = $db->query("SELECT * FROM t_cliente ORDER BY c_nombre ASC LIMIT 10");
+                          $result = $db->query("SELECT * FROM t_cliente ORDER BY c_nombre ASC");
 
                           while($row = mysqli_fetch_array($result)) {
                             ?>
@@ -120,7 +125,18 @@
 
 
                         <button onClick="window.open('listaCliente.php');" style="margin-left: 10px;width: 80px;display: inline" type="button" class="form-control btn-success roundbotton"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                      </div>  
+                      </div>
+
+                      <div class="col-12 col-md-12">
+                        <div class="col-6 col-md-6">
+                          <input type="radio" name="tipo_pago_POST" value="0"> Contado
+                        </div>
+                        <div class="col-6 col-md-6">
+                          <input type="radio" name="tipo_pago_POST" value="1"> Cheque
+                        </div>
+                      </div>
+                      <br>
+
                       <div class="form-group">
                         
                    
@@ -394,7 +410,7 @@
 
           let productos = document.getElementsByName("productos_POST[]");
           
-          if(productos.length > 0 && $("#cliente_factura").val() != "") {
+          if(productos.length > 0 && $("#cliente_factura").val() != "" && $('input[name=tipo_pago_POST]:checked').length > 0) {
             if(confirm("¿Esta seguro que desea finalizar la compra?")) {
               document.form_guardar_venta.submit();
             }

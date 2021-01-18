@@ -32,11 +32,12 @@ $(document).ready(function () {
                                 let html = `<tr>
                                                 <td>${response}</td>
                                                 <td>${$("#formProducto").val()}</td>
-                                                <td>${$("#codigo").val()}</
+                                                <td>${$("#codigo").val()}</td>
                                                 <td>${$("#formGanancia").val()}</td>
                                                 <td>${$("#formPVenta").val()}</td>
                                                 <td>${$("#formM").val()}</td>
-                                                <td>${$("#formCa").val()}</td>  
+                                                <td>${$("#formCa").val()}</td>
+                                                <td> 0 </td> 
                                                                                               
                                                 <td width="130px">
                                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="${response}"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button></td>
@@ -137,6 +138,8 @@ $(document).ready(function () {
                         $("#marca").val(x.marca);
                         $("#categoria").val(x.categoria);
                         // $("#formCa").val(x.categoria);
+
+                        $("#codigo").prop('disabled', true);
                     });
                 }
                 else {
@@ -263,7 +266,7 @@ function abrirVentana() {
     var newfeatures = 'scrollbars=no,resizable=no';
     var window_top = (screen.height - window_height) / 2;
     var window_left = (screen.width - window_width) / 2;
-    newWindow = window.open('reportes/reporteCliente.php', 'Reporte', 'width=' + window_width + ',height=' + window_height + ',top=' + window_top + ',left=' + window_left + ',features=' + newfeatures + '');
+    newWindow = window.open('reportes/reporteProducto.php', 'Reporte', 'width=' + window_width + ',height=' + window_height + ',top=' + window_top + ',left=' + window_left + ',features=' + newfeatures + '');
   }
 
   function configuraLoading(screen) {

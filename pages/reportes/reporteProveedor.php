@@ -50,25 +50,32 @@ function ocultar(){
   
     ?>
 <div id="reporte">
-  <table  border="0">
+  <table  border="0" style="margin: 0 auto;">
   <tr>
 	    <th align="center" class="titulotabla">TIENDA M Y B</th>
 	</tr>
 	  <tr>
-	    <th align="center" class="titulotabla">REPORTE DE PROVEEDORES</th><br>
+	    <th align="center" class="titulotabla">Listado de Proveedor</th><br>
       	    </tr>
-      <tr><th align="center" class="titulotabla">Fecha generaci&oacute;n: <?php echo date("d-m-Y"); ?></th></tr>
+      <!-- <tr><th align="center" class="titulotabla">Fecha generaci&oacute;n: <?php echo date("d-m-Y"); ?></th></tr> -->
      <tr>
-        <th align="center" class="titulotabla">Hora generado: <?php echo date("h:i:s "); ?></th>
-     </tr>
+            <th align="left" class="titulotabla">Fecha generaci&oacute;n
+                <?php 
+                    $currentDateTime=date('m/d/Y H:i:s');
+                    $newDateTime = date('d/m/Y    h:i A', strtotime($currentDateTime));
+                    echo $newDateTime;
+                    // echo date("h:i:s "); 
+                ?>
+            </th>
+      </tr>
 	</table>
 	
 
-  <table border="1" class="formatocontenidotabla" cellspacing=0 cellpadding=0 rules="all">
+  <table border="1" style="margin: 0 auto;" class="formatocontenidotabla" cellspacing=0 cellpadding=0 rules="all">
   <tr>
 	    <td width="40"  align="center"><strong>N</strong></td>
-	    <td width="200"  align="center"><strong>NOMBRE</strong></td>
-        <td width="100"  align="center"><strong>TELÉFONO</strong></td>
+	    <td width="200"  align="center"><strong>Nombre</strong></td>
+        <td width="100"  align="center"><strong>Teléfono</strong></td>
 	  </tr>
   </table>
 
@@ -114,7 +121,7 @@ if ($result) {
     while ($fila = $result->fetch_object()) {
         if ($contador % $numeroFilas == 0) {
             encabezado("");
-            echo "<table border='1' class='formatocontenidotabla' cellspacing='5' cellpadding='0' rules='all'>";
+            echo "<table border='1' style='margin: 0 auto;' class='formatocontenidotabla' cellspacing='5' cellpadding='0' rules='all'>";
         }
         $contador++;
         echo "<tr style='height:20px;''>";

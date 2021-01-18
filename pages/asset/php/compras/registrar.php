@@ -39,10 +39,10 @@
                 $result_comprobarexistencia = $db->query("SELECT * FROM t_detalleproducto WHERE e_idproducto = $productos[$i]");
 
                 if($result_comprobarexistencia->num_rows == 0) {
-                    $result_detalleproducto = $db->query("INSERT INTO t_detalleproducto(e_cantidad, e_unidadporpaquete, e_fechavencimiento, e_tipopaquete, e_preciocompra, e_idproducto) VALUES($cantidades[$i],$unidades_paquete[$i],'$fecha_vencimiento[$i]',$paquetes[$i],$precio_compra[$i],$productos[$i])");
+                    $result_detalleproducto = $db->query("INSERT INTO t_detalleproducto(e_cantidad, e_unidadporpaquete, e_fechavencimiento, e_tipopaquete, e_preciocompra, e_idproducto) VALUES($cantidades[$i],$unidades_paquete[$i],'$fecha_vencimiento[$i]','$paquetes[$i]',$precio_compra[$i],$productos[$i])");
                 }
                 else {
-                    $result_detalleproducto = $db->query("UPDATE t_detalleproducto SET e_cantidad = e_cantidad+$cantidades[$i], e_unidadporpaquete = $unidades_paquete[$i], e_fechavencimiento = '$fecha_vencimiento[$i]', e_tipopaquete = $paquetes[$i], e_preciocompra = $precio_compra[$i] WHERE e_idproducto = $productos[$i]");
+                    $result_detalleproducto = $db->query("UPDATE t_detalleproducto SET e_cantidad = e_cantidad+$cantidades[$i], e_unidadporpaquete = $unidades_paquete[$i], e_fechavencimiento = '$fecha_vencimiento[$i]', e_tipopaquete = '$paquetes[$i]', e_preciocompra = $precio_compra[$i] WHERE e_idproducto = $productos[$i]");
                 }
 
                 //Registrara el detalle de la compra

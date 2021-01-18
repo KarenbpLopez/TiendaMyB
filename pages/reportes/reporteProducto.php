@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title align="left">Reporte de Clientes</title>
+<title align="left">Reporte de Productos</title>
 <style type="text/css">
 .formatocontenidotabla {
 	font-family: Courier, Courier, monospace;
@@ -59,7 +59,7 @@ function ocultar(){
 	        <th align="center" class="titulotabla"></th>
         </tr><br>
         <tr>
-	        <th align="center" class="titulotabla">Listado de Clientes</th>
+	        <th align="center" class="titulotabla">Listado de Productos</th>
         </tr>
         <tr>
             <!-- <th align="left" class="titulotabla">Fecha generaci&oacute;n: <?php echo date("d-m-Y"); ?></th> -->
@@ -79,14 +79,15 @@ function ocultar(){
     <br>
 	
 
-    <table style="margin: 0 auto;" border="1" class="formatocontenidotabla" cellspacing=5 cellpadding=0 rules="all">
+    <table style="margin: 0 auto;" border="1" class="formatocontenidotabla" cellspacing=0 cellpadding=0 rules="all">
         <tr>
             <td width="40"  align="center"><strong>N</strong></td>
-            <td width="100"  align="center"><strong>DUI</strong></td>
-            <td width="150"  align="center"><strong>Nombre</strong></td>
-            <td width="150"  align="center"><strong>Apellido</strong></td>
-            <td width="250"  align="center"><strong>Dirección</strong></td>
-            <td width="100"  align="center"><strong>Teléfono</strong></td>
+            <td width="200"  align="center"><strong>Producto</strong></td>
+            <td width="80"  align="center"><strong>%Ganancia</strong></td>
+            <td width="80"  align="center"><strong>Precio Venta</strong></td>
+            <td width="150"  align="center"><strong>Marca</strong></td>
+            <td width="150"  align="center"><strong>Categoría</strong></td>
+            <td width="80"  align="center"><strong>Unidades</strong></td>
         </tr>
     </table>
 
@@ -96,7 +97,7 @@ function ocultar(){
 include "conexion_db.php";
 
 
-  $resultado=$db->query("SELECT * FROM t_cliente");
+  $resultado=$db->query("SELECT * FROM t_producto");
   if($resultado){
     while ($fil=$resultado->fetch_object()) {
     //   $anio=$fil->anio;
@@ -109,9 +110,16 @@ $numeroFilas = 40; //Cuantas filas por pagina
 $bandera     = false;
 
 if (true) {
-    $sql = "SELECT * FROM t_cliente";
+    // $sql = "SELECT p.e_idproducto,p.c_nombreproducto, p.e_porcentajeganancia, p.e_precioventa,m.c_nombremarca, c.c_nombrecategoria
+    // FROM t_producto as p
+    // INNER JOIN t_marca as m ON p.e_idmarca = m.e_idmarca
+    // INNER JOIN t_categoria AS c ON p.e_idcategoria = c.e_idcategoria";
+    $sql ="SELECT  p.e_idproducto, p.c_nombreproducto,p.c_codigo, p.e_porcentajeganancia, p.e_precioventa, m.c_nombremarca, c.c_nombrecategoria, (SELECT SUM(dp.e_cantidad*dp.e_unidadporpaquete) FROM t_detalleproducto as dp WHERE dp.e_idproducto = p.e_idproducto) as cantidad
+                  FROM t_producto AS p 
+                  INNER JOIN t_marca AS m ON p.e_idmarca = m.e_idmarca 
+                  INNER JOIN t_categoria AS c ON p.e_idcategoria = c.e_idcategoria";
 } else {
-    $sql = "SELECT * FROM t_cliente";
+    $sql = "SELECT * FROM t_producto";
 }
 
 $result = $db->query($sql);
@@ -137,11 +145,12 @@ if ($result) {
         $contador++;
         echo "<tr style='height:20px;''>";
         echo "<td width='40'   align='center'>" . $contador . "</td>";
-        echo "<td width='100'  align='center'>" . $fila->c_dui . "</td>";
-        echo "<td width='150'  align='center'>" . $fila->c_nombre . "</td> ";
-        echo "<td width='150'  align='center'>" . $fila->c_apellido . "</td> ";
-        echo "<td width='250'  align='center'>" . $fila->c_direccion . "</td> ";
-        echo "<td width='100'  align='center'>" . $fila->c_telefono . "</td> ";
+        echo "<td width='200'  align='center'>" . $fila->c_nombreproducto . "</td>";
+        echo "<td width='80'  align='center'>" . $fila->e_porcentajeganancia . "</td> ";
+        echo "<td width='80'  align='center'>" . $fila->e_precioventa . "</td> ";
+        echo "<td width='150'  align='center'>" . $fila->c_nombremarca . "</td> ";
+        echo "<td width='150'  align='center'>" . $fila->c_nombrecategoria . "</td> ";
+        echo "<td width='80'  align='center'>" . $fila->cantidad . "</td> ";
         echo "</tr>";
 
         $bandera = false;

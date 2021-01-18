@@ -3,6 +3,7 @@
     error_reporting(0);
     ini_set('date.timezone','America/El_Salvador');
     
+    //isset($_POST)
     if(isset($_POST)) {
         include "../../../conexion_db.php";
 
@@ -30,6 +31,8 @@
             //Este descuento no es el porcentaje, sino el precio*descuento/100
             $descuentos = $_POST["descuentos_registro"];
 
+            $tipo_venta = intval($_POST["tipo_pago_POST"]); //Tipo de venta
+
             //obtener la cantidad de registros
             $longitud = count($cantidades);
             $contador = 0; // Este contador sirve para saber si hubo fallos en los registros de detalle
@@ -43,7 +46,7 @@
 
                 //tipo de venta... 0 = contado ; 1 = cheque
 
-                $result_detalleventa = $db->query("INSERT INTO t_detalleventa (e_cantidad, db_precio, descuentos, ty_tipoventa, e_idventa, e_idproducto) VALUES ($cantidades[$i],'$precios[$i]', '$desc', 0, $id_venta, $productos[$i])");
+                $result_detalleventa = $db->query("INSERT INTO t_detalleventa (e_cantidad, db_precio, descuentos, ty_tipoventa, e_idventa, e_idproducto) VALUES ($cantidades[$i],'$precios[$i]', '$desc', $tipo_venta, $id_venta, $productos[$i])");
 
                 //descontar del stock
                 $nuevo_stock = intval($cantidades[$i]);
