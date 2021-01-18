@@ -152,11 +152,12 @@
                               <td><?php echo $row[3]; ?></td>
                               <td><?php echo $row[4]; ?></td>
                               <td><?php echo $row[5]; ?></td>
-                              <td width="200px">
+                              <td width="130px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>,<?php echo $row[7]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-
+                                </td>
+                              <td width="130pc">
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>,<?php echo $row[7]; ?>" name-emp="<?php echo $row[2]." ".$row[3]; ?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
-                              </td>
+                                </td>
                             </tr>
                             <?php
                           }
@@ -182,7 +183,7 @@
                                         <span aria-hidden="true" style="font-size: 35px;">×</span>
                                         <span class="sr-only">Cerrar</span>
                                     </button>
-                                  <h3  style="padding-left:150px" id="myModalLabel">Registro De Empleado</h3>
+                                  <h3  style="padding-left:150px" id="myModalLabel">Registro de Empleado</h3>
                                       
                                    
                                      
@@ -197,7 +198,7 @@
                                     <form id="registroCliente">
                                       <input type="hidden" id="formHiddenIDEmp">
                                       <input type="hidden" id="formHiddenIDHorario">
-                                                   <h4  style="padding-left:10px" id="myModalLabel">Datos De Personales</h4>            
+                                                   <h4  style="padding-left:10px" id="myModalLabel">Datos de Personales</h4>            
 
                                             <div class="row">
                                               <div class="col-md-6">
@@ -205,7 +206,7 @@
                                                 onkeypress="return validarTextos(event);">
                                                       
                                                      
-                                                        <input type="text" class="form-control roundtext2" placeholder="Telefono" name="formTelefonoEmp" 
+                                                        <input type="text" class="form-control roundtext2" placeholder="Teléfono" name="formTelefonoEmp" 
                                                         id="formTelefonoEmp" >
                                               </div>
                                               <div class="col-md-6">
@@ -213,10 +214,10 @@
                                                 onkeypress="return validarTextos(event);">
                                                       
                                                      
-                                                        <input type="text" class="form-control roundtext2" placeholder="Dui" id="formDUIEmp">
+                                                        <input type="text" class="form-control roundtext2" placeholder="DUI" id="formDUIEmp">
                                               </div>
                                             </div>  
-                                              <input type="text" style="height: 120px;" class="form-control roundtext2" placeholder="Direccion" id="formDireccionEmp">
+                                              <input type="text" style="height: 120px;" class="form-control roundtext2" placeholder="Dirección" id="formDireccionEmp">
 
                                               <select id="cargo" style="color: #918c8c" class="form-control roundtext2">
                                                 <option value="">Elegir Cargo</option>
@@ -231,7 +232,7 @@
                                                   $db->close();
                                                 ?>
                                               </select>
-                                               <h4  style="padding-left:10px" id="myModalLabel">Datos De Horario</h4>
+                                               <h4  style="padding-left:10px" id="myModalLabel">Datos de Horario</h4>
                                                <div class="row">
                                               <div class="col-md-6">
                                                <input type="time" name="" style="height: 35px !important;" class="form-control roundtext2" placeholder="Hora Inicio" id="formHoraInicioEmp">

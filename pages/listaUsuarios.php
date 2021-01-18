@@ -147,11 +147,12 @@
                               <td><?php echo $row[1]; ?></td>
                               <td><?php echo $row[2]; ?></td>
                               <td><?php echo $row[3]; ?></td>
-                              <td width="200px">
+                              <td width="130px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-
+                                </td>
+                              <td width="130px">
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" name-emp="<?php echo $row[2]; ?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
-                              </td>
+                                </td>
                             </tr>
                             <?php
                           }
@@ -177,7 +178,7 @@
                                         <span aria-hidden="true" style="font-size: 35px;">×</span>
                                         <span class="sr-only">Cerrar</span>
                                     </button>
-                                  <h3  style="padding-left:150px" id="myModalLabel">Registro De Usuario</h3>
+                                  <h3  style="padding-left:150px" id="myModalLabel">Registro de Usuario</h3>
                                       
                                    
                                      
@@ -212,8 +213,8 @@
                                                 </datalist>
                                               </div>
                                             </div>
-                                             <input type="text" class="form-control roundtext2" placeholder="Nombre De Usuario" id="formNombreUsuario">
-                                              <input type="text" class="form-control roundtext2" placeholder="Correo Electronico" id="formCorreoUsuario">
+                                             <input type="text" class="form-control roundtext2" placeholder="Nombre de Usuario" id="formNombreUsuario">
+                                              <input type="text" class="form-control roundtext2" placeholder="Correo Electrónico" id="formCorreoUsuario">
                                               <div class="row">
                                               <div class="col-md-6">
                                                
