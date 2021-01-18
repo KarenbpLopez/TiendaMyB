@@ -196,7 +196,8 @@
                                               <div class="col-md-8">
                                                 <input type="text" class="form-control roundtext2" placeholder="Nombre" id="formNombreCargo" autocomplete="off"
                                                 onkeypress="return validarTextos(event);">
-                                                <!-- <span class="estado" id="estado"></span> -->
+                                                 <!--Validar si el codigo existe-->
+                                                 <button type="button" id="verificar_producto" class="btn ripple-infinite btn-round btn-info verificar" title="Verificar existencia" tag="-1" product-name=""><i class="fa fa-info"></i></button>
                                                       
                                                      
                                                        
@@ -292,6 +293,52 @@
     <script src="asset/js/main.js"></script>
 
     <script src="asset/js/cargos/app-cargos.js"></script>
+
+    <script>
+     $("#verificar_producto").click(function (e) { 
+        e.preventDefault();
+        
+        if($("#formNombreCargo").val() != "") {
+          $.ajax({
+            type: "POST",
+            url: "asset/php/cargo/ajaxExiste.php",
+            data: {
+              nombre: $("#formNombreCargo").val()
+            },
+            success: function (response) {
+              if(response == -1) {
+                
+                $("#formNombreCargo").css("border-radius", "5px");
+                $("#formNombreCargo").css("border-color", "#FF6656");
+                
+
+                $("#verificar_producto").attr("tag", "-1");
+                // $("#verificar_producto").attr("product-name", "");
+
+                alert("Cargo no disponible");
+              }
+              else {
+                let valores = response.split(",");
+                $("#formNombreCargo").css("border-radius", "5px");
+                $("#formNombreCargo").css("border-color", "#27C24C");
+                
+
+                $("#verificar_producto").attr("tag", 0);
+                // $("#verificar_producto").attr("product-name", valores[1]);
+                alert("Cargo disponible");
+              }
+            }
+          });
+        }
+        else {
+          $("#formNombreCargo").css("border-radius", "0px");
+          $("#formNombreCargo").css("border-color", "#FF6656");
+
+          $("#verificar_producto").attr("tag", "-1");
+          // $("#verificar_producto").attr("product-name", "");
+        }
+      });
+    </script>
 
     <?php include "asset/php/sesion/script_logout.php"; ?>
   <!-- end: Javascript -->

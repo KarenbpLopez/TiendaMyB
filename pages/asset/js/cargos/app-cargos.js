@@ -2,7 +2,8 @@ $(document).ready(function () {
     $("#guardar").click(function (e) { 
         e.preventDefault();
         if($("#formNombreCargo").val() != "" && $("#formSalarioCargo").val() != "" && parseFloat($("#formSalarioCargo").val()) > 0
-        && $("#rt input[name='tipo']").is(':checked')){
+        && $("#rt input[name='tipo']").is(':checked') 
+        && $("#verificar_producto").attr("tag") != "-1"){
            
            
             var tipo = document.getElementsByName("tipo");
@@ -37,8 +38,10 @@ $(document).ready(function () {
                                                 <td>${response}</td>
                                                 <td>${$("#formNombreCargo").val()}</td>
                                                 <td>$ ${$("#formSalarioCargo").val()}</td>
-                                                <td width="200px">
+                                                <td width="130px">
                                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="${response}"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
+                                                </td>
+                                                <td width="120px">
                                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="${response}" nombre-cargo="${$("#formNombreCargo").val()}"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                                                 </td>
                                             </tr>`;
@@ -86,16 +89,17 @@ $(document).ready(function () {
                 }
         }
         else {
-            if(parseFloat($("#formSalarioCargo").val()) <= 0) {
-                alert("El salario no puede ser negativo");
+            if($("#verificar_producto").attr("tag") == "-1") {
+                alert("Cargo no disponible");
             }
             else {
                 Swal.fire(
-  'Los campos no deben estar vacios',
-  '',
-  'error'
-)
-            }
+                    'Los campos no deben estar vacios',
+                    '',
+                    'error'
+                    ) 
+                
+            } 
         }
     });
 
@@ -205,7 +209,8 @@ $(document).ready(function () {
         habilitar();
     });
 
-    
+     //Para verificar si existe
+     
 
 });
 

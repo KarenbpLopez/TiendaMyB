@@ -42,7 +42,8 @@
 
             for ($i=0; $i < $longitud; $i++) { 
                 //se obtiene el descuento
-                $desc = floatval($precios[$i])*(floatval($descuentos[$i])/100);
+                $desc = intval($cantidades[$i])*floatval($precios[$i])*(floatval($descuentos[$i])/100);
+
 
                 //tipo de venta... 0 = contado ; 1 = cheque
 
