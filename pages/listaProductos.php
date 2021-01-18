@@ -191,7 +191,8 @@
             <div id="contenido">
               <form id="registroProducto">
 
-                <input type="text" class="form-control roundtext2" id="codigo" placeholder="Código" style="width: 221px;display: inline;">
+                <input type="text" class="form-control roundtext2" onkeypress="return validarNumeros(event);";
+                id="codigo" placeholder="Código" style="width: 221px;display: inline;">
                 <input type="text" class="form-control roundtext2" id="formProducto" placeholder="Nombre" >
                 
                 <div class="row">
@@ -273,12 +274,14 @@
               <form id="registroMarca">
                 <div class="row">
                   <div class="col-md-6">
-                    <input type="text" style="width: 260px;float: left;" class="form-control roundtext2" id="formNombreM" placeholder="Nombre" autocomplete="off">
+                    <input type="text" style="width: 300px;float: left;" class="form-control roundtext2" id="formNombreM" placeholder="Nombre" autocomplete="off">
                   </div>
                   <div class="col-md-6">
-                    <div>
-                      <input style="float:left;width: 120px;" type="button" value="Guardar" id="guardarM" name="guardarM" class="btn ripple-infinite btn-round btn-success" >
-                      <input style="float: right;width: 120px;" type="button" value="Cerrar" class="btn ripple-infinite btn-round btn-danger" data-dismiss="modal">
+                    <div style="float: right;padding-right:1px;">
+                    <button type="button" id="verificar_m" class="btn ripple-infinite btn-round btn-info verificar" 
+                     title="Verificar existencia" tag="-1" product-name=""><i class="fa fa-info"></i></button><br><br>
+                      <input style="width: 120px;" type="button" value="Guardar" id="guardarM" name="guardarM" class="btn ripple-infinite btn-round btn-success" >
+                      <input style="width: 120px;" type="button" value="Cerrar" class="btn ripple-infinite btn-round btn-danger" data-dismiss="modal">
                     </div>
                   </div>
                 </div>
@@ -310,12 +313,17 @@
               <form id="registroCategoria">
                 <div class="row">
                   <div class="col-md-6">
-                    <input type="text" style="width: 320px;float: left;" class="form-control roundtext2" id="formNombreC" autocomplete="off" placeholder="Nombre" onkeypress="return validarTextos(event);">
+                    <input type="text" style="width: 300px;float: left;" class="form-control roundtext2" id="formNombreC" autocomplete="off" placeholder="Nombre" onkeypress="return validarTextos(event);">
+                    
+                    
                   </div>
                   <div class="col-md-6">
                     <div style="float: right;padding-right:1px;">
+                    <button type="button" id="verificar_c" class="btn ripple-infinite btn-round btn-info verificar" 
+                     title="Verificar existencia" tag="-1" product-name=""><i class="fa fa-info"></i></button><br><br>
+                     
                       <input style="width: 120px;" type="button" value="Guardar" id="guardarC" name="guardarC" class="btn ripple-infinite btn-round btn-success" >
-                      <input style="width: 120px;" type="button" value="Cerrar" class="btn ripple-infinite btn-round btn-danger" data-dismiss="modal">
+                      <input style="width: 120px;" type="button" value="Cerrar" onclick="return resetearModal();"class="btn ripple-infinite btn-round btn-danger" data-dismiss="modal">
                     </div>
                   </div>
                 </div>
@@ -353,6 +361,107 @@
   <script src="asset/js/productos/app-producto.js"></script>
   <script src="asset/js/M&C/app-marca.js"></script>
   <script src="asset/js/M&C/app-categoria.js"></script>
+
+  <script>
+     $("#verificar_c").click(function (e) { 
+        e.preventDefault();
+        
+        if($("#formNombreC").val() != "") {
+          $.ajax({
+            type: "POST",
+            url: "asset/php/M&C/ajaxExisteC.php",
+            data: {
+              nombre: $("#formNombreC").val()
+            },
+            success: function (response) {
+              if(response == -1) {
+                
+                $("#formNombreC").css("border-radius", "5px");
+                $("#formNombreC").css("border-color", "#FF6656");
+                
+
+                $("#verificar_c").attr("tag", "-1");
+                Swal.fire(
+                'Categoría no disponible',
+                '',
+                'success'
+                )
+                // alert("Categoría no disponible");
+              }
+              else {
+                $("#formNombreC").css("border-radius", "5px");
+                $("#formNombreC").css("border-color", "#27C24C");
+                
+
+                $("#verificar_c").attr("tag", 0);
+                Swal.fire(
+                'Categoría disponible',
+                '',
+                'success'
+                )
+                // alert("Categoría disponible");
+              }
+            }
+          });
+        }
+        else {
+          $("#formNombreC").css("border-radius", "0px");
+          $("#formNombreC").css("border-color", "#FF6656");
+
+          $("#verificar_c").attr("tag", "-1");
+        }
+      });
+
+      //para marca
+      $("#verificar_m").click(function (e) { 
+        e.preventDefault();
+        
+        if($("#formNombreM").val() != "") {
+          $.ajax({
+            type: "POST",
+            url: "asset/php/M&C/ajaxExisteM.php",
+            data: {
+              nombre: $("#formNombreM").val()
+            },
+            success: function (response) {
+              if(response == -1) {
+                
+                $("#formNombreM").css("border-radius", "5px");
+                $("#formNombreM").css("border-color", "#FF6656");
+                
+
+                $("#verificar_m").attr("tag", "-1");
+                Swal.fire(
+                'Marca no disponible',
+                '',
+                'success'
+                )
+                // alert("Marca no disponible");
+              }
+              else {
+                $("#formNombreM").css("border-radius", "5px");
+                $("#formNombreM").css("border-color", "#27C24C");
+                
+
+                $("#verificar_m").attr("tag", 0);
+                Swal.fire(
+                'Marca disponible',
+                '',
+                'success'
+                )
+                // alert("Marca disponible");
+              }
+            }
+          });
+        }
+        else {
+          $("#formNombreM").css("border-radius", "0px");
+          $("#formNombreM").css("border-color", "#FF6656");
+
+          $("#verificar_m").attr("tag", "-1");
+        }
+      });
+    </script>
 
   <?php include "asset/php/sesion/script_logout.php"; ?>
   <!-- end: Javascript -->

@@ -25,7 +25,7 @@
   <!-- end: Css -->
 	<!-- end: Css -->
 
-	<link rel="shortcut icon" href="asset/img/logomi.png">
+  <link rel="icon" type="image/png" href="images/icons/favicon3.png"/>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -183,8 +183,8 @@
                         <label style="align-content: left">Total</label> 
                         <input style="float: right;height: 30px;width: 150px;display: inline;text-align: right;" disabled="true" class="form-control " type="text" name="total_venta" id="total_venta" value="0.00"><br><br>
                        
-                        <button type="reset" style="width: 128px;display: inline;float: left;" class="form-control btn-danger roundbotton2" id="btn-cancelar-venta"><i class="fa fa-times" aria-hidden="true" ></i>&nbsp;Cancelar</button>
-                         <button style="width: 125px;display: inline;float: right;" class="form-control btn-success roundbotton2" id="btn-registrar-venta"><i class="fa fa-floppy-o" aria-hidden="true"  ></i>&nbsp;Guardar</button>
+                        <button type="reset" style="width: 128px;display: inline;float: left;" class="form-control btn-danger roundbotton2" id="btn-cancelar-venta"><i class="" aria-hidden="true" ></i>&nbsp;Cancelar</button>
+                         <button style="width: 125px;display: inline;float: right;" class="form-control btn-success roundbotton2" id="btn-registrar-venta"><i class="" aria-hidden="true"  ></i>&nbsp;Guardar</button>
                          </div><br><br>
 
                     

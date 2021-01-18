@@ -38,7 +38,7 @@
 
     <script type="text/javascript">
         function abrirVentana() {
-              var window_width = 750;
+              var window_width = 800;
               var window_height = 480;
               var newfeatures= 'scrollbars=no,resizable=no';
               var window_top = (screen.height-window_height)/2;

@@ -81,12 +81,12 @@ function ocultar(){
 
     <table style="margin: 0 auto;" border="1" class="formatocontenidotabla" cellspacing=5 cellpadding=0 rules="all">
         <tr>
-            <td width="40"  align="center"><strong>N</strong></td>
+            <td width="30"  align="center"><strong>N</strong></td>
             <td width="100"  align="center"><strong>DUI</strong></td>
             <td width="150"  align="center"><strong>Nombre</strong></td>
             <td width="150"  align="center"><strong>Apellido</strong></td>
             <td width="250"  align="center"><strong>Dirección</strong></td>
-            <td width="100"  align="center"><strong>Teléfono</strong></td>
+            <td width="95"  align="center"><strong>Teléfono</strong></td>
         </tr>
     </table>
 
@@ -136,12 +136,12 @@ if ($result) {
         }
         $contador++;
         echo "<tr style='height:20px;''>";
-        echo "<td width='40'   align='center'>" . $contador . "</td>";
+        echo "<td width='30'   align='center'>" . $contador . "</td>";
         echo "<td width='100'  align='center'>" . $fila->c_dui . "</td>";
         echo "<td width='150'  align='center'>" . $fila->c_nombre . "</td> ";
         echo "<td width='150'  align='center'>" . $fila->c_apellido . "</td> ";
         echo "<td width='250'  align='center'>" . $fila->c_direccion . "</td> ";
-        echo "<td width='100'  align='center'>" . $fila->c_telefono . "</td> ";
+        echo "<td width='95'  align='center'>" . $fila->c_telefono . "</td> ";
         echo "</tr>";
 
         $bandera = false;

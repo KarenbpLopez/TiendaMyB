@@ -3,12 +3,12 @@ $(document).ready(function () {
         e.preventDefault();
         
         if($("#formNombreC").val() != "") {
-                
+            if($("#verificar_c").attr("tag") == "0"){
                     $.ajax({
                         type: "POST",
                         url: "asset/php/M&C/ajaxAgregarC.php",
                         data: {
-                            nombre: $("#formNombreC").val(),
+                        nombre: $("#formNombreC").val(),
                         },
                         success: function (response) {
                             if(response == -1) {
@@ -19,6 +19,10 @@ $(document).ready(function () {
                                 )
                             }
                             else {
+                                let html = `<option value = ${response}>${$("#formNombreC").val()}</option>`;
+
+                                $("#categoria").append(html);
+
                                 $("#modalC").modal("hide");
                                 Swal.fire(
                                 'Registro agregado con exito',
@@ -29,6 +33,13 @@ $(document).ready(function () {
                             }
                         }
                     });
+                }else{
+                    Swal.fire(
+                        'Verificar que la Categoría no este registrada',
+                        '',
+                        'error'
+                        )
+                }
         }else {
             Swal.fire(
             'Los campos no deben estar vacios',

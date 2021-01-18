@@ -60,7 +60,12 @@ $(document).ready(function () {
                     });
                 }
                 else {
-                    alert("Verifique que el cargo no este registrado");
+                    Swal.fire(
+                        'Verifique que el cargo no este registrado',
+                        '',
+                        'error'
+                        )
+                    // alert("Verifique que el cargo no este registrado");
                 }
             }
             else {
@@ -95,7 +100,12 @@ $(document).ready(function () {
         }
         else {
             if(parseFloat($("#formSalarioCargo").val()) <= 0) {
-                alert("El salario no puede ser negativo");
+                Swal.fire(
+                    'El salario no puede ser negativo',
+                    '',
+                    'error'
+                    )
+                // alert("El salario no puede ser negativo");
             }
             else {
                 Swal.fire(

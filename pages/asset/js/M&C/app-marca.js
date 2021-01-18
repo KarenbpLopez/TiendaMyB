@@ -3,7 +3,7 @@ $(document).ready(function () {
         e.preventDefault();
         
         if($("#formNombreM").val() != "") {
-                
+            if($("#verificar_m").attr("tag") == "0"){
                     $.ajax({
                         type: "POST",
                         url: "asset/php/M&C/ajaxAgregar.php",
@@ -19,6 +19,10 @@ $(document).ready(function () {
                                 )
                             }
                             else {
+                                let html = `<option value = ${response}>${$("#formNombreM").val()}</option>`;
+
+                                $("#marca").append(html);
+
                                 $("#modalM").modal("hide");
                                 Swal.fire(
                                 'Registro agregado con exito',
@@ -30,6 +34,13 @@ $(document).ready(function () {
                             }
                         }
                     });
+                }else{
+                    Swal.fire(
+                        'Verificar que la Marca no este registrada',
+                        '',
+                        'error'
+                        )
+                }
         }else {
             Swal.fire(
             'Los campos no deben estar vacios',

@@ -193,18 +193,26 @@
                                                                
                                             <br>
                                             <div class="row">
-                                              <div class="col-md-8">
-                                                <input type="text" class="form-control roundtext2" placeholder="Nombre" id="formNombreCargo" autocomplete="off"
+                                                <div class="col-md-6">
+                                                <input type="text" class="form-control roundtext2" placeholder="Nombre" id="formNombreCargo" autocomplete="off" style="width: 400px;display: inline;"
                                                 onkeypress="return validarTextos(event);">
-                                                 <!--Validar si el codigo existe-->
-                                                 <button type="button" id="verificar_producto" class="btn ripple-infinite btn-round btn-info verificar" title="Verificar existencia" tag="-1" product-name=""><i class="fa fa-info"></i></button>
-                                                      
-                                                     
-                                                       
+                                                  </div>
+                                                <div class="col-md-6" style="padding-left:25%;">
+                                                <button type="button" id="verificar_producto" class="btn ripple-infinite btn-round btn-info verificar" 
+                                                 title="Verificar existencia" tag="-1" product-name=""><i class="fa fa-info"></i></button>
+                                                  </div>
+                                              </div>
+                                            <div class="row">
+                                              <div class="col-md-4">
+                                              <input type="text" class="form-control roundtext2" placeholder="Salario" id="formSalarioCargo"  autocomplete="off"
+                                                onkeypress="return validarNumeros(event);">
+                                                
+                                                 
+                                                    
+                                
                                               </div>
                                               <div class="col-md-4">
-                                                <input type="text" class="form-control roundtext2" placeholder="Salario" id="formSalarioCargo"  autocomplete="off"
-                                                onkeypress="return validarNumeros(event);">
+                                                
                                                       
                                                      
                                                        
@@ -313,7 +321,6 @@
                 
 
                 $("#verificar_producto").attr("tag", "-1");
-                // $("#verificar_producto").attr("product-name", "");
 
                 alert("Cargo no disponible");
               }
@@ -323,7 +330,6 @@
                 
 
                 $("#verificar_producto").attr("tag", 0);
-                // $("#verificar_producto").attr("product-name", valores[1]);
                 alert("Cargo disponible");
               }
             }
@@ -334,7 +340,6 @@
           $("#formNombreCargo").css("border-color", "#FF6656");
 
           $("#verificar_producto").attr("tag", "-1");
-          // $("#verificar_producto").attr("product-name", "");
         }
       });
     </script>
