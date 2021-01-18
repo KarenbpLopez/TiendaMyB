@@ -94,16 +94,16 @@
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
-                        <li><a href="listaCliente.php"><span class="fa-check fa"></span>Cliente</a></li>
-                        <li><a href="listaEmpleados.php"><span class="fa-check fa"></span>Empleado</a></li>
-                        <li><a href="listaProveedor.php"><span class="fa-check fa"></span>Proveedor</a></li>
-                        <li><a href="listaProductos.php"><span class="fa-check fa"></span>Producto</a></li>
-                        <li><a href="listaCargos.php"><span class="fa-check fa"></span>Cargo</a></li>
+                        <li><a href="listaCliente.php"><span></span>Cliente</a></li>
+                        <li><a href="listaEmpleados.php"><span></span>Empleado</a></li>
+                        <li><a href="listaProveedor.php"><span></span>Proveedor</a></li>
+                        <li><a href="listaProductos.php"><span></span>Producto</a></li>
+                        <li><a href="listaCargos.php"><span></span>Cargo</a></li>
                       </ul>
                     </li>
                     <li class="ripple redo" onclick="location='listacompra.php'">
                       <a class="tree-toggle nav-header" href="#">
-                        <span class="fa-shopping-basket fa"></span> Compras
+                        <span class="fa-briefcase fa"></span> Compras
                       </a>
                     </li>
                     <li class="ripple redo" onclick="location='cajero.php'">

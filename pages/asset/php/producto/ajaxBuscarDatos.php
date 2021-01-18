@@ -6,11 +6,12 @@
         $query = "%".$_REQUEST['query']."%";
 
         if($query != "") {
-            $result = $db->query("SELECT p.e_idproducto,p.c_nombreproducto, p.e_porcentajeganancia, p.e_precioventa,m.c_nombremarca, c.c_nombrecategoria
+            $result = $db->query("SELECT p.e_idproducto,p.c_codigo,p.c_nombreproducto, p.e_porcentajeganancia, p.e_precioventa,m.c_nombremarca, c.c_nombrecategoria
                 FROM t_producto as p
                 INNER JOIN t_marca as m ON p.e_idmarca = m.e_idmarca
                 INNER JOIN t_categoria AS c ON p.e_idcategoria = c.e_idcategoria
-                WHERE p.c_nombreproducto LIKE '$query' OR m.c_nombremarca LIKE '$query' OR c.c_nombrecategoria LIKE '$query'");
+                WHERE p.c_nombreproducto LIKE '$query' OR m.c_nombremarca LIKE '$query' OR c.c_nombrecategoria LIKE '$query'
+                OR p.c_codigo LIKE '$query'");
         }else {
             $result = $db->query("SELECT * FROM t_producto");
         }
@@ -26,6 +27,7 @@
                         <td><?php echo $row[3]; ?></td>
                         <td><?php echo $row[4]; ?></td>
                         <td><?php echo $row[5]; ?></td>
+                        <td><?php echo $row[6]; ?></td>
                         <td width="130px"><button type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0];?>">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                         Modificar</button></td>
@@ -37,7 +39,7 @@
                 }
             }
             else {
-                ?><tr><td colspan="8">No se pudieron encontrar datos</td></tr><?php
+                ?><tr><td colspan="10">No se pudieron encontrar datos</td></tr><?php
             }
         }
         else {

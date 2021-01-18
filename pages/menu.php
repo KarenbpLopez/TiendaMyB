@@ -27,7 +27,7 @@
                     </li>
                     <li class="ripple redo" onclick="location='listacompra.php'">
                       <a class="tree-toggle nav-header" href="#">
-                        <span class="fa-shopping-basket fa"></span> Compras
+                        <span class="fa-briefcase fa"></span> Compras
                       </a>
                     </li>
                     <li class="ripple redo" onclick="location='cajero.php'">

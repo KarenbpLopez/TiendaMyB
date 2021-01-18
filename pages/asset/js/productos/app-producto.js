@@ -4,7 +4,7 @@ $(document).ready(function () {
         var select = $("#marca").val();
         var cate = $("#categoria").val();
         
-        if($("#formProducto").val() != ""  && $("#formPVenta").val() != "" && parseFloat($("#formPVenta").val()) >= 0 && parseInt($("#formGanancia").val()) >=0
+        if($("#formProducto").val() != ""  && $("#codigo").val() != "" && parseFloat($("#formPVenta").val()) >= 0 && parseInt($("#formGanancia").val()) >=0
         && select != 0 && cate !=0) {
 
                 if($("#formHiddenIDProducto").val() == "") {
@@ -13,10 +13,12 @@ $(document).ready(function () {
                         url: "asset/php/producto/ajaxAgregar.php",
                         data: {
                             nombre: $("#formProducto").val(),
+                            codigo: $("#codigo").val(),
                             porcentaje: $("#formGanancia").val(),
                             precio: $("#formPVenta").val(),
                             marca: $("#marca").val(),
                             categoria: $("#categoria").val()
+                            
                         },
                         success: function (response) {
                             if(response == -1) {
@@ -30,6 +32,7 @@ $(document).ready(function () {
                                 let html = `<tr>
                                                 <td>${response}</td>
                                                 <td>${$("#formProducto").val()}</td>
+                                                <td>${$("#codigo").val()}</
                                                 <td>${$("#formGanancia").val()}</td>
                                                 <td>${$("#formPVenta").val()}</td>
                                                 <td>${$("#formM").val()}</td>
@@ -59,6 +62,7 @@ $(document).ready(function () {
                         url: "asset/php/producto/ajaxModificar.php",
                         data: {
                             nombre: $("#formProducto").val(),
+                            codigo: $("#codigo").val(),
                             porcentaje: $("#formGanancia").val(),
                             precio: $("#formPVenta").val(),
                             marca: $("#marca").val(),
@@ -108,7 +112,7 @@ $(document).ready(function () {
 
     $(document).on("click", ".obtener-datos", function () {
         var elemento = $(this)[0];
-        resetearModal();
+        resetearModalP();
         $("#guardar").val("Modificar");
         
         $.ajax({
@@ -126,6 +130,7 @@ $(document).ready(function () {
                         $("#formHiddenIDProducto").val(x.id);
 
                         $("#formProducto").val(x.nombre);
+                        $("#codigo").val(x.codigo);
                         $("#formGanancia").val(x.porcentaje);
                         $("#formPVenta").val(x.precio);
                         // $("#formM").val(x.marca);
@@ -212,6 +217,7 @@ function resetearModalP() {
     $("#formPVenta").val("");
     $("#marca").val("");
     $("#categoria").val("");
+    $("#codigo").val("");
 }
 
 function mod(){

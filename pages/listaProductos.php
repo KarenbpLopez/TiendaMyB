@@ -116,7 +116,7 @@
                 <thead>
                   <tr>
                     <td>N°</td>
-                    <!-- <td>Codigo</td> -->
+                    <td>Codigo</td>
                     <td>Nombre</td>
                     <td>% Ganancia</td>
                     <td>Precio Venta</td>
@@ -127,7 +127,12 @@
                 <tbody id="actualizarTabla">
                 <?php
                   include "conexion_db.php";
-                  $result = $db->query("SELECT p.e_idproducto, p.c_nombreproducto, p.e_porcentajeganancia, p.e_precioventa, m.c_nombremarca, c.c_nombrecategoria FROM t_producto as p INNER JOIN t_marca as m ON p.e_idmarca = m.e_idmarca INNER JOIN t_categoria as c ON p.e_idcategoria = c.e_idcategoria");
+                  $result = $db->query("SELECT  p.e_idproducto,p.c_codigo, p.c_nombreproducto, p.e_porcentajeganancia, p.e_precioventa, m.c_nombremarca, c.c_nombrecategoria
+                  FROM t_producto AS p 
+                  INNER JOIN t_marca AS m ON p.e_idmarca = m.e_idmarca 
+                  INNER JOIN t_categoria AS c ON p.e_idcategoria = c.e_idcategoria");
+                  
+
                   while ($row = mysqli_fetch_array($result)) {
                   ?>
                   <tr>
@@ -137,6 +142,7 @@
                       <td><?php echo $row[3]; ?></td>
                       <td><?php echo $row[4]; ?></td>
                       <td><?php echo $row[5]; ?></td>
+                      <td><?php echo $row[6]; ?></td>
 
                     <td width="130px"><button type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0];?>">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -175,7 +181,10 @@
           <input type="hidden" id="formHiddenIDProducto">
             <div id="contenido">
               <form id="registroProducto">
+
+                <input type="text" class="form-control roundtext2" id="codigo" placeholder="Código" style="width: 221px;display: inline;">
                 <input type="text" class="form-control roundtext2" id="formProducto" placeholder="Nombre" >
+                
                 <div class="row">
                   <div class="col-md-6">
                   <input type="hidden" id="formM">

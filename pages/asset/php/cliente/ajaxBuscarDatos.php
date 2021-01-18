@@ -24,8 +24,10 @@
                         <td><?php echo $row[3]; ?></td>
                         <td><?php echo $row[4]; ?></td>
                         <td><?php echo $row[5]; ?></td>
-                        <td width="200px">
+                        <td width="130px">
                             <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
+                        </td>    
+                        <td width="120px">   
                             <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-cargo="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                         </td>
                     </tr>
@@ -33,7 +35,7 @@
                 }
             }
             else {
-                ?><tr><td colspan="7">No se pudieron encontrar datos</td></tr><?php
+                ?><tr><td colspan="8">No se pudieron encontrar datos</td></tr><?php
             }
         }
         else {
