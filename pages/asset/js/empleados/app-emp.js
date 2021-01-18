@@ -47,8 +47,10 @@ $(document).ready(function () {
                                                 <td>${$("#formApellidoEmp").val()}</td>
                                                 <td>${$("#formDireccionEmp").val()}</td>
                                                 <td>${$("#formTelefonoEmp").val()}</td>
-                                                <td width="200px">
+                                                <td width="130px">
                                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="${datos[0]},${datos[1]}"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
+                                                </td>
+                                                <td width="130px">
                                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="${datos[0]},${datos[1]}" name-emp="${$("#formNombreEmp").val()} ${$("#formApellidoEmp").val()}"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                                                 </td>
                                             </tr>`;
