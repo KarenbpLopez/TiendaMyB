@@ -147,13 +147,8 @@
                               <td><?php echo $row[2]; ?></td>
                               <td width="130px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-<<<<<<< HEAD
                               </td>
                               <td width="120px"> 
-=======
-                                </td>
-                              <td width="120px">
->>>>>>> 77895fe6ccabc91e9e0b658b75dd9c71496591f9
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-prov="<?php echo $row[1];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                                 </td>
                             </tr>

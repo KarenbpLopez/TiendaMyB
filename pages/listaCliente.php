@@ -25,7 +25,7 @@
   <!-- end: Css -->
   <!-- end: Css -->
 
-  <link rel="shortcut icon" href="asset/img/logomi.png">
+  <link rel="icon" type="image/png" href="images/icons/favicon3.png"/>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -153,13 +153,8 @@
                               <td><?php echo $row[5]; ?></td>
                               <td width="130px">
                                 <button  type="button" class="form-control btn-success roundtext obtener-datos" data-target="#modalNuevo" data-toggle="modal" tag="<?php echo $row[0]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</button>
-<<<<<<< HEAD
                               </td>
                                 <td width="120px">  
-=======
-                                </td>  
-                              <td width="130px"> 
->>>>>>> 77895fe6ccabc91e9e0b658b75dd9c71496591f9
                                 <button  type="button" class="form-control btn-danger roundtext eliminar-datos" tag="<?php echo $row[0]; ?>" nombre-cliente="<?php echo $row[1].' '.$row[2];?>"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
                                 </td>
                             </tr>

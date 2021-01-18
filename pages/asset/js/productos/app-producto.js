@@ -4,8 +4,8 @@ $(document).ready(function () {
         var select = $("#marca").val();
         var cate = $("#categoria").val();
         
-        if($("#formProducto").val() != ""  && $("#codigo").val() != "" && parseFloat($("#formPVenta").val()) >= 0 && parseInt($("#formGanancia").val()) >=0
-        && select != 0 && cate !=0) {
+        if($("#formProducto").val() != ""  && $("#codigo").val() != "" && parseFloat($("#formPVenta").val()) >= 0 
+        && parseInt($("#formGanancia").val()) >=0 && select != 0 && cate !=0) {
 
                 if($("#formHiddenIDProducto").val() == "") {
                     $.ajax({
@@ -213,11 +213,11 @@ function resetearModalP() {
     $("#formHiddenIDProducto").val("");
 
     $("#formProducto").val("");
+    $("#codigo").val("");
     $("#formGanancia").val("");
     $("#formPVenta").val("");
     $("#marca").val("");
     $("#categoria").val("");
-    $("#codigo").val("");
 }
 
 function mod(){
