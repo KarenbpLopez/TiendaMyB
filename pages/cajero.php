@@ -367,17 +367,18 @@
                 }
                 else {
                   if(response == -1) {
-                    alert("Este codigo no existe en el inventario o esta descontinuado");
+                    swal("Este código no existe o esta descontinuado", "", "error")
+                    
                   }
                   else {
-                    alert("Se ha sobrepasado la capacidad del stock");
+                    swal("Se a sobrepasado la cantidad de Stock", "no existe stock", "error")
                   }
                 }
               }
             });
           }
           else {
-            alert("El codigo es necesario");
+            swal("Es necesario un código", "Debe ingresar un código", "error")
           }
         });
 
@@ -411,16 +412,33 @@
           let productos = document.getElementsByName("productos_POST[]");
           
           if(productos.length > 0 && $("#cliente_factura").val() != "" && $('input[name=tipo_pago_POST]:checked').length > 0) {
-            if(confirm("¿Esta seguro que desea finalizar la compra?")) {
-              document.form_guardar_venta.submit();
-            }
+            swal({
+	title: "¿Seguro quiere realizar esta venta?",
+        text: "No podrás deshacer este paso.",
+        type: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#5CBDD9",
+        cancelButtonColor: "#D9534F",
+        confirmButtonText: "No",
+        cancelButtonText: "Si",
+        closeOnConfirm: false,
+        closeOnCancel: false,
+        showLoaderOnConfirm: true
+}).then(function(isConfirm) {
+	if(isConfirm.value!=true) {
+
+    	document.form_guardar_venta.submit(); 
+	}
+});
+            
           }
           else {
             if(productos.length == 0) {
-              alert("Debe ingresar productos primero");
+              swal("Debe ingresar productos primero", "", "error")
+              
             }
             if($("#cliente_registro").val() == "") {
-              alert("Ingrese el nombre del cliente");
+              swal("Ingrese el nombre del cliente", "", "info")
             }
           }
         });

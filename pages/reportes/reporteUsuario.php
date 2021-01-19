@@ -69,7 +69,7 @@ function ocultar(){
 	    <td width="40"  align="center"><strong>N</strong></td>
 	    <td width="200"  align="center"><strong>NOMBRE DE USUARIO</strong></td>
         <td width="100"  align="center"><strong>EMPLEADO</strong></td>
-        <td width="100"  align="center"><strong>CORREO ELECTRONICO</strong></td>
+        <td width="165"  align="center"><strong>CORREO ELECTRONICO</strong></td>
         
 	  </tr>
   </table>
