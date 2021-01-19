@@ -84,21 +84,21 @@
                         <div class="container">
            
             
-           <div style="top:20px !important;float:right;padding-right: 60px;padding-left: 10px; position: relative;">
+           <!-- <div style="top:20px !important;float:right;padding-right: 60px;padding-left: 10px; position: relative;">
              <button  style="width: 150px;" type="button" class="form-control btn-success roundbotton" data-target="#modalNuevo" data-toggle="modal" onclick="resetearModal();">
             <i class="fa fa-user-plus" aria-hidden="true" ></i>
              Nuevo Usuario</button>
-           </div> 
-            <div style="top:20px !important;float:right;padding-left:20px;position: relative;">
+           </div>  -->
+            <!-- <div style="top:20px !important;float:right;padding-left:20px;position: relative;">
              <button  type="button" onclick="abrirVentana();" style="width: 120px;" class="form-control btn-info roundbotton"  type="button"    data-toggle="modal">
             <i class="fa fa-file-text-o" aria-hidden="true"></i>
              Reporte</button>
-           </div>
-             <div style="top:20px;float:right;padding-left:0px !important;" class="col-md-6">
+           </div> -->
+             <!-- <div style="top:20px;float:right;padding-left:0px !important;" class="col-md-6">
 
 
            <input type="text" class="form-control input-md roundtext"  id="busq" placeholder="&#xf002;&nbsp;Buscar"> <a class="srh-btn">    
-           </div>
+           </div> -->
 
             
 
