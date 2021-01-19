@@ -51,6 +51,8 @@
           <!-- end: Left Menu -->
 
 
+          <script src="sweetalert/sweetalert2.min.js"></script>
+          <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css" />
 
 
          
@@ -481,8 +483,13 @@
                   $("#verificar_producto").attr("tag", "-1");
                   $("#verificar_producto").attr("product-name", "");
 
-                  alert("El codigo no existe");
-                }
+
+                  Swal.fire(
+									'El Código No Existe',
+									'Ooops',
+									'error'
+									)
+                  }
                 else {
                   let valores = response.split(",");
 
@@ -549,10 +556,19 @@
           }
           else {
             if($("#verificar_producto").attr("tag") == "-1") {
-              alert("Debe ingresar un producto valido");
-            }
+              wal.fire(
+						'Debe Ingresar Un Producto Valido',
+						'Verifique Producto',
+						'warning'
+            )
+          }
             else {
-              alert("Todos los campos son obligatorios");
+              wal.fire(
+						'Todos Los Campos Son Obligatorios',
+						'Rellene Los Campos',
+						'warning'
+            )
+              
             }
           }
         });
@@ -560,11 +576,27 @@
         $(document).on("click", ".eliminar-producto", function () {
           let elemento = $(this)[0];
 
-          if(confirm("¿Desea borrar esta fila?")) {
-            $(elemento.parentElement.parentElement).remove();
+
+          swal({
+	title: "¿Seguro quiere eliminar esta fila?",
+        text: "No podrás deshacer este paso.",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#5CBDD9",
+        cancelButtonColor: "#D9534F",
+        confirmButtonText: "No",
+        cancelButtonText: "Si",
+        closeOnConfirm: false,
+        closeOnCancel: false,
+        showLoaderOnConfirm: true
+}).then(function(isConfirm) {
+	if(isConfirm.value!=true) {
+		$(elemento.parentElement.parentElement).remove();
             actualizarTotal();
+	}
+});
           }
-        });
+        );
 
         $("#guardar_venta").click(function (e) { 
           e.preventDefault();
@@ -578,10 +610,22 @@
           }
           else {
             if(productos.length == 0) {
-              alert("Debe ingresar productos primero");
+
+              Swal.fire(
+						'Debe Ingresar Productos Primero',
+						'Campo Vacio',
+						'warning'
+						)
+              
             }
             if($("#proveedor_POST").val() == "") {
-              alert("Ingrese el nombre del proveedor primero");
+
+              Swal.fire(
+						'Ingrese el nombre del proveedor primero',
+						'Campo Vacio',
+						'warning'
+              )
+
             }
           }
         });

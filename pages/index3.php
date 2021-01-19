@@ -30,12 +30,15 @@
     <![endif]-->
   </head>
 
+
+
  <body id="mimin" class="dashboard">
+
       <!-- start: Header -->
         <nav class="navbar navbar-default header navbar-fixed-top">
           <div class="col-md-12 nav-wrapper">
+          
             <div class="navbar-header" style="width:100%;">
-             
 
               <ul class="nav navbar-nav search-nav">
                 <li>
@@ -71,8 +74,11 @@
         </nav>
       <!-- end: Header -->
 
-      <div class="container-fluid mimin-wrapper">
   
+
+      <div class="container-fluid mimin-wrapper">
+
+       
           <!-- start:Left Menu -->
             <div id="left-menu">
               <div class="sub-left-menu scroll">
@@ -129,8 +135,18 @@
                 </div>
             </div>
           <!-- end: Left Menu -->
+
+           <!-- Contenido -->
+          <div class="contenido" >
+          <a href="archivo.png">
+            <center>
+            <img src="images/logo.png" width="500" height="500"/>
+            </center>
+            </a>
+          </div>
+
           <footer class="footer text-center">
-                © 2017 Monster Admin by wrappixel.com
+                © 2021 Monster Admin by wrappixel.com
             </footer>
 
       </div>

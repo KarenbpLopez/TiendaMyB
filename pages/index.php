@@ -109,20 +109,28 @@
 						success: function (response) {
 							if(response != -1) {
 								Swal.fire(
-  									'Bienvenido',
-  									
-  									'success'
+									'Bienvenido',
+									' ',
+									'success'
 								)
 								$(location).attr("href","index3.php");
 							}
 							else {
-								alert("Datos incorrectos");
+								Swal.fire(
+									'Datos Incorrectos',
+									'Ooops',
+									'error'
+									)
 							}
 						}
 					});
 				}
 				else {
-					alert("Primero rellene los datos");
+					Swal.fire(
+						'Rellene los Campos',
+						'Ooops',
+						'warning'
+						)
 				}
 			});
 		});
