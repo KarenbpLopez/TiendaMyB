@@ -1,6 +1,6 @@
 <?php
-    // $db_host="localhost";
-    $db_host="pl15012.comues.com";
+    $db_host="localhost";
+    // $db_host="pl15012.comues.com";
     // $db_usuario="root";
     $db_usuario="comuesco_pl15012";
     // $db_password="";
