@@ -139,7 +139,7 @@ $(document).ready(function () {
     $(document).on("click", ".eliminar-datos", function () {
         let elemento = $(this)[0];
 
-        if(swal({
+        swal({
         title: "¿Seguro quiere eliminar esta fila?",
         text: "No podrás deshacer este paso.",
         type: "warning",
@@ -154,8 +154,7 @@ $(document).ready(function () {
       }).then(function(isConfirm) {
         if(isConfirm.value!=true) {
           //codigo a realizar
-        }
-      })) {
+          {
             $.ajax({
                 type: "POST",
                 url: "asset/php/usuario/ajaxBorrarDatos.php",
@@ -165,9 +164,11 @@ $(document).ready(function () {
                 success: function (response) {
                     if(response != -1) {
                         $(elemento.parentElement.parentElement).remove();
+
+                        
                     }
                     else {
-                       Swal.fire(
+                        Swal.fire(
   'Imposible borrar puede que este usuario cuente con datos',
   '',
   'error'
@@ -176,7 +177,10 @@ $(document).ready(function () {
                 }
             });
         }
+        }
+      }) 
     });
+
     $("#busq").keyup(function (e) { 
         $.ajax({
             type: "POST",
