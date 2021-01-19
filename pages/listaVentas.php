@@ -133,7 +133,7 @@
                           <td>N°</td>
                           <td>Fecha de Venta</td>
                           <td>Empleado</td>
-                          <td>Valor de Venta</td>
+                          <!-- <td>Valor de Venta</td> -->
                           <td></td>
                         </tr>
                       </thead>
@@ -143,12 +143,10 @@
                           $result = $db->query("SELECT
                           t_venta.e_idventa,
                           t_venta.dt_fecha,
-                          t_empleado.c_nombre,
-                          SUM(((t_detalleventa.e_cantidad * t_detalleventa.db_precio) - t_detalleventa.descuentos)) as Total
+                          t_empleado.c_nombre
                           FROM
                           t_venta
                           INNER JOIN t_empleado ON t_venta.e_idempleado = t_empleado.e_idempleado
-                          INNER JOIN t_detalleventa ON t_detalleventa.e_idventa = t_venta.e_idventa
                           GROUP BY
                           t_venta.e_idventa");
                           while($row = mysqli_fetch_array($result)) {
@@ -157,7 +155,6 @@
                               <td><?php echo $row[0]; ?></td>
                               <td><?php echo $row[1]; ?></td>
                               <td><?php echo $row[2]; ?></td>
-                              <td><?php echo $row[3]; ?></td>
                               <td width="130px">
                                 <button  type="button" class="form-control btn-success roundtext" onclick="window.open('reportes/factura.php?id=<?php echo $row[0]; ?>','_blank');" ><i class="fa fa-eye" aria-hidden="true"></i> Ver Factura</button>
                                 </td>

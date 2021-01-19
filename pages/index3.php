@@ -105,6 +105,7 @@
                         <li><a href="listaProveedor.php"><span></span>Proveedor</a></li>
                         <li><a href="listaProductos.php"><span></span>Producto</a></li>
                         <li><a href="listaCargos.php"><span></span>Cargo</a></li>
+                        <li><a href="listaVentas.php"><span></span>Ventas</a></li>
                       </ul>
                     </li>
                     <li class="ripple redo" onclick="location='listacompra.php'">
