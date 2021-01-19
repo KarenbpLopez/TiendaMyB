@@ -61,7 +61,7 @@
                      <li role="separator" class="divider"></li>
                      <li class="more">
                       <ul>
-                        <li><a href="#"><span class="fa fa-cogs"></span> Configuración</a></li>
+                        <!-- <li><a href="#"><span class="fa fa-cogs"></span> Configuración</a></li> -->
                         <li><a href="#" id="btn-cerrar-session"><span class="fa fa-power-off "></span> Salir</a></li>
                       </ul>
                     </li>
@@ -137,16 +137,15 @@
           <!-- end: Left Menu -->
 
            <!-- Contenido -->
-          <div class="contenido" >
-          <a href="archivo.png">
-            <center>
-            <img src="images/logo.png" width="500" height="500"/>
-            </center>
-            </a>
+          <div class="contenido" align="center">
+          <!-- © 2021 Sistema Informático para el Control Administrativo de la Tienda M & B, San Vicente, San Vicente -->
+          <!-- <a href="archivo.png"> -->
+            <img src="images/logo.png" width="500" height="500" />
+            <!-- </a> -->
           </div>
 
           <footer class="footer text-center">
-                © 2021 Monster Admin by wrappixel.com
+                © 2021 Sistema Informático para el Control Administrativo de la Tienda M & B, San Vicente, San Vicente
             </footer>
 
       </div>
